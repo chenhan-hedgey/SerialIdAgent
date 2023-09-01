@@ -55,7 +55,7 @@ public class AgentConfig {
             return;
         }
         // 读取并更新操作模式（状态码）
-        if (!StringUtils.isBlank(map.get("agent.state"))) {
+        if ((!StringUtils.isBlank(map.get("agent.state")))&&StringUtils.isNumeric(map.get("agent.state"))) {
             Integer tmp = Integer.parseInt(map.get("agent.state"));
             stateCode = tmp;
         }
