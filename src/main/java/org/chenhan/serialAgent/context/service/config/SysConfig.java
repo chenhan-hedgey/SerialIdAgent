@@ -1,5 +1,6 @@
 package org.chenhan.serialAgent.context.service.config;
 
+import org.chenhan.serialAgent.context.model.po.AgentConfig;
 import org.chenhan.serialAgent.context.service.config.impl.PropertiesLoader;
 import org.chenhan.serialAgent.exception.LoaderException;
 import org.slf4j.Logger;
@@ -15,15 +16,44 @@ import java.util.Map;
  */
 public class SysConfig {
     private static final Logger logger = LoggerFactory.getLogger(SysConfig.class);
+
+    private static SysConfig sysConfig;
+
+    /***
+     * 单例方法
+     * @return 单例的SysConfig对象
+     */
+    public static SysConfig getSingleton(){
+        if (sysConfig==null) {
+            synchronized (SysConfig.class){
+                if (sysConfig==null) {
+                    sysConfig = new SysConfig();
+                }
+            }
+        }
+        return sysConfig;
+    }
+
+    public SysConfig(){
+        this(new PropertiesLoader());
+    }
+    public SysConfig(SourceLoader sourceLoader) {
+        this.sourceLoader = sourceLoader;
+    }
+
     /**
      * 配置加载方式，默认properties文件
      */
-    private static SourceLoader sourceLoader = new PropertiesLoader();
+    private  SourceLoader sourceLoader;
     /**
      * 初始的配置信息
      */
-    private static  Map<String,String> initialConfigs;
+    private  Map<String,String> initialConfigs;
 
+    /**
+     * agent的基本信息
+     */
+    private AgentConfig agentConfig;
 
 
 
@@ -51,7 +81,7 @@ public class SysConfig {
      * @param fullPath
      * @throws LoaderException
      */
-    public static void load(String fullPath) throws LoaderException {
+    public  void load(String fullPath) throws LoaderException {
         initialConfigs = sourceLoader.load(fullPath);
         refresh();
     }
@@ -59,9 +89,9 @@ public class SysConfig {
     /**
      * 根据initialConfig更新agentConfig中所有的配置字段
      */
-    private static void refresh() {
+    private  void refresh() {
         logger.info("配置文件已改变，正在更新字段...");
-
+        agentConfig.refresh(initialConfigs);
     }
 
 }
