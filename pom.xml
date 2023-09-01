@@ -14,11 +14,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--agent相关的配置s-->
         <!--入口类-->
-        <agent.premainClass>org.tools.SerialNumberAgent</agent.premainClass>
+        <agent.premainClass>org.chenhan.serialAgent.SerialNumberAgent</agent.premainClass>
         <!--打包的名字-->
         <agent.packageName>demo-1</agent.packageName>
         <!--包名前缀-->
-        <agent.pomPrefix>serial.number.package.prefix</agent.pomPrefix>
+        <agent.pomPrefix>package.prefix</agent.pomPrefix>
         <!--agent相关的配置d-->
     </properties>
 
@@ -69,4 +69,130 @@
         <!--解析yaml的依赖d-->
     </dependencies>
 
+    <build>
+        <finalName>${agent.packageName}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </testResource>
+        </testResources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <!--<archive>-->
+                    <!--    <manifestEntries>-->
+                    <!--        &lt;!&ndash;需要改为你的Premain主类&ndash;&gt;-->
+                    <!--        <Premain-Class>${agent.premainClass}</Premain-Class>-->
+                    <!--        <Can-Redefine-Classes>true</Can-Redefine-Classes>-->
+                    <!--        <Can-Retransform-Classes>true</Can-Retransform-Classes>-->
+                    <!--    </manifestEntries>-->
+                    <!--</archive>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--shade插件-避免包名冲突-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <relocations>
+                                <!-- 配置包重命名 -->
+                                <relocation>
+                                    <pattern>net</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.net</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.org</shadedPattern>
+                                    <!--排除原有的agent代码-->
+                                    <excludes>
+                                        <exclude>org.tools.*</exclude>
+                                    </excludes>
+                                </relocation>
+                                <relocation>
+                                    <pattern>ch.qos</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.ch.qos</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.com</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>google</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.google</shadedPattern>
+                                </relocation>
+                            </relocations>
+                            <!--转换器-->
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <!--需要改为你的Premain主类-->
+                                        <Premain-Class>${agent.premainClass}</Premain-Class>
+                                        <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                                        <Can-Retransform-Classes>true</Can-Retransform-Classes>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
+                            <!--过滤器-->
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/services/javax.servlet.ServletContainerInitializer</exclude>
+                                        <exclude>META-INF/MANIFEST.MF</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

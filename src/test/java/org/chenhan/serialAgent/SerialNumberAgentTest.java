@@ -9,5 +9,7 @@ import static org.junit.Assert.*;
  * @Date: 2023/9/1 10:33
  */
 public class SerialNumberAgentTest {
-
+    public static void main(String[] args) {
+        System.out.println("hello world!");
+    }
 }
