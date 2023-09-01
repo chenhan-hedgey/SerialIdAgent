@@ -1,11 +1,10 @@
-package org.chenhan.serialAgent.config.impl;
+package org.chenhan.serialAgent.context.service.config.impl;
 
-import org.chenhan.serialAgent.config.SourceLoader;
+import org.chenhan.serialAgent.context.service.config.SourceLoader;
 import org.chenhan.serialAgent.exception.LoaderException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;

@@ -1,9 +1,8 @@
-package org.chenhan.serialAgent.config;
+package org.chenhan.serialAgent.context.service.config;
 
 import org.chenhan.serialAgent.exception.LoaderException;
 
 import java.util.Map;
-import java.util.Properties;
 
 /**
  * @Author: chenhan

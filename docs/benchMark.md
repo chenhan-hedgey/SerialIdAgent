@@ -1,6 +1,6 @@
 # 任务点
 - [ ] 加载资源
-  - [ ] 读取properties文件
+  - [x] 读取properties文件
   - [ ] 设计loader类
   - [ ] 设计读取方式
 - [ ] agent基本配置

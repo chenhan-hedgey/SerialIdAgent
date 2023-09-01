@@ -1,14 +1,13 @@
-package org.chenhan.serialAgent.config.impl;
+package org.chenhan.serialAgent.context.impl;
 
-import org.chenhan.serialAgent.config.SourceLoader;
+import org.chenhan.serialAgent.context.service.config.SourceLoader;
+import org.chenhan.serialAgent.context.service.config.impl.PropertiesLoader;
 import org.chenhan.serialAgent.exception.LoaderException;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
-
-import static org.junit.Assert.*;
 
 /**
  * @Author: chenhan
