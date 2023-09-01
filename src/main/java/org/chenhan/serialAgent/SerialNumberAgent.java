@@ -1,5 +1,7 @@
 package org.chenhan.serialAgent;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,13 +20,46 @@ public class SerialNumberAgent {
      * @param arg 传递的命令行参数，传递配置文件地址
      * @param instrumentation Instrumentation对象，用于在Java应用程序启动时转换字节码
      */
-    public static void premain(String arg, Instrumentation instrumentation) {
-        logger.info("流水号Agent开始执行...");
+    public static void premain(String arg, Instrumentation instrumentation)  {
+        try {
+            String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties";
+            arg = path;
+            logger.info("流水号Agent开始执行...");
 
-        // 1.加载配置文件，初始化配置
-        // 2.配置agent
-        // 3.安装agent
-        logger.info("流水号Agent结束执行...");
+            // 1.加载配置文件，初始化配置
+            if (StringUtils.isBlank(arg)) {
+                logger.error("配置文件路径为空，请检查路径");
+                return;
+            }
+            validatePath(arg);
+            validateProperties(arg);
+            throw new Exception("message");
+            // 2.配置agent
+            // 3.安装agent
+            //logger.info("流水号Agent结束执行...");
+        }
+        catch (Exception e) {
+            // 获取异常堆栈跟踪
+            String errorMessage = e.getMessage();
+            // 获取异常堆栈跟踪
+            String stackTrace = ExceptionUtils.getStackTrace(e);
+            logger.error("执行agent出错 - 错误信息: {}\n堆栈跟踪:\n{}", errorMessage, stackTrace);
+        }
+
+    }
+
+    /**
+     * 校验文件路径
+     * @param path 配置文件的路径
+     */
+    private static void validateProperties(String path) {
+    }
+
+    /**
+     * 校验路径格式
+     * @param arg 文件绝对路径
+     */
+    private static void validatePath(String arg) {
 
     }
 }
