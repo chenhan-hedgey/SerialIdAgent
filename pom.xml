@@ -12,6 +12,61 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--agent相关的配置s-->
+        <!--入口类-->
+        <agent.premainClass>org.tools.SerialNumberAgent</agent.premainClass>
+        <!--打包的名字-->
+        <agent.packageName>demo-1</agent.packageName>
+        <!--包名前缀-->
+        <agent.pomPrefix>serial.number.package.prefix</agent.pomPrefix>
+        <!--agent相关的配置d-->
     </properties>
+
+    <dependencies>
+        <!--bytebuddy开始-->
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>1.12.10</version>
+        </dependency>
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy-agent</artifactId>
+            <version>1.12.10</version>
+        </dependency>
+        <!--bytebuddy开始-->
+
+        <!-- 日志相关依赖s -->
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.32</version> <!-- 可能会有更新的版本，你可以查找最新版本号 -->
+        </dependency>
+
+        <!-- Logback（作为日志实现库） -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.6</version> <!-- 可能会有更新的版本，你可以查找最新版本号 -->
+        </dependency>
+        <!-- 日志相关依赖d -->
+        <!--junit4-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!--解析yaml的依赖s-->
+        <!--<dependency>-->
+        <!--    <groupId>org.yaml</groupId>-->
+        <!--    <artifactId>snakeyaml</artifactId>-->
+        <!--    <version>1.29</version> &lt;!&ndash; 使用最新的版本号 &ndash;&gt;-->
+        <!--</dependency>-->
+        <!--解析yaml的依赖d-->
+    </dependencies>
 
 </project>

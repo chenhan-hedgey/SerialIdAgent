@@ -1,0 +1,17 @@
+# 任务点
+- [ ] 加载资源
+  - [ ] 读取properties文件
+  - [ ] 设计loader类
+  - [ ] 设计读取方式
+- [ ] agent基本配置
+  - [ ] agent读取loader类
+  - [ ] agent构建transformer
+  - [ ] agent构建AB
+  - [ ] agent执行
+  - [ ] agent安装
+  - [ ] 启动不成功，不要影响源程序的执行
+- [ ] 功能
+  - [ ] mock方法
+  - [ ] 日志配置
+  - [ ] 拦截方法的基本操作
+  - [ ] 数据库使用
