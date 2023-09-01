@@ -1,8 +1,8 @@
 # 任务点
-- [ ] 加载资源
+- [x] 加载资源
   - [x] 读取properties文件
-  - [ ] 设计loader类
-  - [ ] 设计读取方式
+  - [x] 设计loader类
+  - [x] 设计读取方式
 - [ ] agent基本配置
   - [ ] agent读取loader类
   - [ ] agent构建transformer
