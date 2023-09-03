@@ -1,5 +1,7 @@
 package org.chenhan.serialAgent;
 
+import org.chenhan.demo.ApiCaller;
+
 import static org.junit.Assert.*;
 
 /**
@@ -10,6 +12,7 @@ import static org.junit.Assert.*;
  */
 public class SerialNumberAgentTest {
     public static void main(String[] args) {
-        System.out.println("hello world!");
+        ApiCaller.call(new String[]{"chenhan","wll"});
+        return;
     }
 }

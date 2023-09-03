@@ -23,7 +23,7 @@
         </includes>
       </testResource>
     </testResources>
-    <finalName>${agent.packageName}</finalName>
+    <finalName>${agent.jarName}</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -71,7 +71,7 @@
                   <pattern>org</pattern>
                   <shadedPattern>${agent.pomPrefix}.org</shadedPattern>
                   <excludes>
-                    <exclude>org.tools.*</exclude>
+                    <exclude>${agent.package}.*</exclude>
                   </excludes>
                 </relocation>
                 <relocation>
@@ -124,13 +124,20 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.24</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <properties>
     <agent.premainClass>org.chenhan.serialAgent.SerialNumberAgent</agent.premainClass>
     <agent.pomPrefix>package.prefix</agent.pomPrefix>
-    <agent.packageName>demo-1</agent.packageName>
+    <agent.jarName>demo-1</agent.jarName>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
+    <agent.package>org.chenhan.serialAgent</agent.package>
   </properties>
 </project>
