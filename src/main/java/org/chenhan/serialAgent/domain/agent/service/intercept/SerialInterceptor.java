@@ -1,4 +1,4 @@
-package org.chenhan.serialAgent.intercept;
+package org.chenhan.serialAgent.domain.agent.service.intercept;
 
 import net.bytebuddy.implementation.bind.annotation.AllArguments;
 import net.bytebuddy.implementation.bind.annotation.Origin;

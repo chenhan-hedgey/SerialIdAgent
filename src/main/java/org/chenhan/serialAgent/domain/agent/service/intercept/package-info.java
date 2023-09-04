@@ -4,4 +4,4 @@
  * @ProjectName: SerialNumberAgent
  * @Date: 2023/9/1 15:10
  */
-package org.chenhan.serialAgent.intercept;
+package org.chenhan.serialAgent.domain.agent.service.intercept;

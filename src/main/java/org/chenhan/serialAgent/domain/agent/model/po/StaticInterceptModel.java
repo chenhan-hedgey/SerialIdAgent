@@ -1,4 +1,4 @@
-package org.chenhan.serialAgent.context.model.po;
+package org.chenhan.serialAgent.domain.agent.model.po;
 
 import lombok.Data;
 

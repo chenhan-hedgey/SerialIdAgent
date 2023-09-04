@@ -1,4 +1,4 @@
-package org.chenhan.serialAgent.support;
+package org.chenhan.serialAgent.domain.support;
 
 /**
  * @Author: chenhan

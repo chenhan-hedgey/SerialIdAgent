@@ -1,4 +1,4 @@
-package org.chenhan.serialAgent.builder;
+package org.chenhan.serialAgent.domain.agent.service.builder;
 
 import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.description.type.TypeDescription;
@@ -6,7 +6,7 @@ import net.bytebuddy.dynamic.DynamicType;
 import net.bytebuddy.implementation.MethodDelegation;
 import net.bytebuddy.matcher.ElementMatchers;
 import net.bytebuddy.utility.JavaModule;
-import org.chenhan.serialAgent.intercept.SerialInterceptor;
+import org.chenhan.serialAgent.domain.agent.service.intercept.SerialInterceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +21,7 @@ public class TransformDemo implements AgentBuilder.Transformer{
     @Override
     public DynamicType.Builder<?> transform(DynamicType.Builder<?> builder, TypeDescription typeDescription, ClassLoader classLoader, JavaModule javaModule) {
         // 匹配指定的函数签名
-        logger.info("class:{},已进入transform方法");
+        logger.info("class:{},已进入transform方法",typeDescription.getCanonicalName());
         builder = builder
                 .method(ElementMatchers.named("call")
                         .and(ElementMatchers.takesArguments(String[].class))

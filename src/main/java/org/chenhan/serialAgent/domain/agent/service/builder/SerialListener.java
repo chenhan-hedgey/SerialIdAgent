@@ -1,6 +1,5 @@
-package org.chenhan.serialAgent.builder;
+package org.chenhan.serialAgent.domain.agent.service.builder;
 
-import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.description.type.TypeDescription;
 import net.bytebuddy.dynamic.DynamicType;
