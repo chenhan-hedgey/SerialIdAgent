@@ -1,6 +1,7 @@
 package org.chenhan.serialAgent.domain.agent.service.context.service.config.impl;
 
 import org.chenhan.serialAgent.domain.agent.context.service.config.SourceLoader;
+import org.chenhan.serialAgent.domain.agent.service.context.service.config.BaseSourceLoader;
 import org.chenhan.serialAgent.exception.AgentException;
 
 import java.io.FileInputStream;
@@ -15,7 +16,7 @@ import java.util.Properties;
  * @ProjectName: SerialNumberAgent
  * @Date: 2023/9/1 11:00
  */
-public class PropertiesLoader implements SourceLoader {
+public class PropertiesLoader extends BaseSourceLoader {
     /**
      * 从指定的完整路径加载资源，并将其内容作为键值对形式的 Map 返回。
      *
