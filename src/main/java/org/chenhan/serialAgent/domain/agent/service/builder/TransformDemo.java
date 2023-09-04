@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
  * @Date: 2023/9/2 12:14
  */
 public class TransformDemo implements AgentBuilder.Transformer{
+
     private static final Logger logger = LoggerFactory.getLogger(TransformDemo.class);
     @Override
     public DynamicType.Builder<?> transform(DynamicType.Builder<?> builder, TypeDescription typeDescription, ClassLoader classLoader, JavaModule javaModule) {

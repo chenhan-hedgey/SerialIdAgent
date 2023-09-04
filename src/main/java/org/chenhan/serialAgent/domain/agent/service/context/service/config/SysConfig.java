@@ -25,7 +25,13 @@ import java.util.Map;
 public class SysConfig {
     private static final Logger logger = LoggerFactory.getLogger(SysConfig.class);
 
+    /**
+     * 配置对象
+     */
     private static SysConfig sysConfig;
+    /**
+     * 配置路径
+     */
     private static String configPath;
 
     /***
