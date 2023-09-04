@@ -44,7 +44,7 @@ public class SerialInterceptor {
         logger.info("进入静态拦截方法");
 
         String clazzName = "org.tools.mockAPI.ApiCaller";
-        String functionName = "calll";
+        String functionName = "call";
         Class[] classes =  new Class[]{String[].class, String[].class};
         /**
          * 调用状态，是指，判断call是否执行成功（过程成功即可）
