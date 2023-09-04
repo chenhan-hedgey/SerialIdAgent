@@ -6,10 +6,10 @@
 - [ ] agent基本配置
   - [ ] agent读取loader类
   - [ ] agent构建transformer
-  - [ ] agent构建AB
-  - [ ] agent执行
-  - [ ] agent安装
-  - [ ] 启动不成功，不要影响源程序的执行
+  - [x] agent构建AB
+  - [x] agent执行
+  - [x] agent安装
+  - [x] 启动不成功，不要影响源程序的执行
 - [ ] 功能
   - [ ] mock方法
   - [ ] 日志配置
