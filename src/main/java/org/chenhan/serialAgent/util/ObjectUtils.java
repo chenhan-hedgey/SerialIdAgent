@@ -19,12 +19,12 @@ public class ObjectUtils {
 
     /**
      * 判断多个对象实例中是否有任何一个为null
-     *
+     * 空数组也会返回true
      * @param objects 要检查的多个对象
      * @return 如果多个对象实例中有任何一个为null，则返回true，否则返回false
      */
     public static boolean isAnyNull(Object... objects) {
-        if (objects == null) {
+        if (isEmpty(objects)) {
             return true;
         }
 
@@ -45,7 +45,7 @@ public class ObjectUtils {
      */
     public static boolean isAllNull(Object... objects) {
         // 如果传入的数组为null，直接返回true
-        if (objects == null) {
+        if (isEmpty(objects)) {
             return true;
         }
 
@@ -58,6 +58,15 @@ public class ObjectUtils {
 
         // 所有对象都为null，返回true
         return true;
+    }
+
+    /**
+     * 判断对象数组是否为null
+     * @param objects
+     * @return
+     */
+    public static boolean isEmpty(Object ... objects){
+        return objects == null || objects.length == 0;
     }
 
 }
