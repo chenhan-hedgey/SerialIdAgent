@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.chenhan.serialAgent.context.model.po.AgentConfig;
 import org.chenhan.serialAgent.context.model.po.DatabaseInfo;
 import org.chenhan.serialAgent.context.service.config.impl.PropertiesLoader;
-import org.chenhan.serialAgent.exception.LoaderException;
+import org.chenhan.serialAgent.exception.AgentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -106,7 +106,7 @@ public class SysConfig {
      * @param fullPath 全路径
      * @param useExistingConfig
      */
-    public void loadConfig(String fullPath,Boolean useExistingConfig) throws LoaderException {
+    public void loadConfig(String fullPath,Boolean useExistingConfig) throws AgentException {
         logger.info("是否已有配置:{}，是否使用已有配置:{}",initialConfigs==null,useExistingConfig);
         if (initialConfigs!=null&&useExistingConfig){
             logger.info("已有的配置,直接使用");
@@ -124,7 +124,7 @@ public class SysConfig {
      * @param fullPath 全路径
      * @param useExistingConfig 是否使用已有的config
      */
-    public Map<String,String> getInitialConfigs(String fullPath,Boolean useExistingConfig) throws LoaderException {
+    public Map<String,String> getInitialConfigs(String fullPath,Boolean useExistingConfig) throws AgentException {
         loadConfig(fullPath,useExistingConfig);
         return initialConfigs;
     }
@@ -132,17 +132,17 @@ public class SysConfig {
     /**
      * 获取对应参数
      * @return 获取原始配置数据（Map）
-     * @throws LoaderException
+     * @throws AgentException
      */
-    public Map<String,String> getInitialConfigs() throws LoaderException {
+    public Map<String,String> getInitialConfigs() throws AgentException {
         return initialConfigs;
     }
     /**
      * 加载配置文件
      * @param fullPath
-     * @throws LoaderException
+     * @throws AgentException
      */
-    public  void load(String fullPath) throws LoaderException {
+    public  void load(String fullPath) throws AgentException {
         if (!StringUtils.equals(fullPath, configPath)) {
             setConfigPath(fullPath);
             stateNo|=2;

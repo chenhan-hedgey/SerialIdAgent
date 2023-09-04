@@ -31,18 +31,18 @@ public class SerialNumberAgent {
      */
     public static void premain(String arg, Instrumentation instrumentation)  {
         try {
-            //String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties";
-            //arg = path;
-            //logger.info("流水号Agent开始执行,配置路径为:{}...",arg);
-            //
-            //// 1.加载配置文件，初始化配置
-            //if (StringUtils.isBlank(arg)) {
-            //    logger.error("配置文件路径为空，请检查路径");
-            //    return;
-            //}
-            //// 校验
-            //validatePath(arg);
-            //validateProperties(arg);
+            String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties";
+            arg = path;
+            logger.info("流水号Agent开始执行,配置路径为:{}...",arg);
+
+            // 1.加载配置文件，初始化配置
+            if (StringUtils.isBlank(arg)) {
+                logger.error("配置文件路径为空，请检查路径");
+                return;
+            }
+            // 校验
+            validatePath(arg);
+            validateProperties(arg);
             // 2.配置agent
             AgentBuilder.Default agentBuilder = new AgentBuilder.Default();
             logger.info("是否执行到了transformer实例化");

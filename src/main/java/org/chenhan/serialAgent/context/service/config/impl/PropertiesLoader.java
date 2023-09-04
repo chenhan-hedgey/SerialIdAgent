@@ -1,7 +1,7 @@
 package org.chenhan.serialAgent.context.service.config.impl;
 
 import org.chenhan.serialAgent.context.service.config.SourceLoader;
-import org.chenhan.serialAgent.exception.LoaderException;
+import org.chenhan.serialAgent.exception.AgentException;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -21,10 +21,10 @@ public class PropertiesLoader implements SourceLoader {
      *
      * @param fullPath 资源的完整路径，需要被加载。
      * @return 包含加载资源内容的键值对形式的 Map。
-     * @throws LoaderException 如果加载资源时出现异常。
+     * @throws AgentException 如果加载资源时出现异常。
      */
     @Override
-    public Map<String, String> load(String fullPath) throws LoaderException{
+    public Map<String, String> load(String fullPath) throws AgentException {
 
         Properties properties = new Properties();
         Map<String, String> resultMap = new HashMap<>(10);
@@ -37,7 +37,7 @@ public class PropertiesLoader implements SourceLoader {
                 resultMap.put(key, value);
             }
         } catch (IOException e) {
-            throw new LoaderException("读取properties文件时出错",e);
+            throw new AgentException("读取properties文件时出错",e);
         }
 
         return resultMap;

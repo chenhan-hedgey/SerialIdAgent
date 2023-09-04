@@ -2,7 +2,7 @@ package org.chenhan.serialAgent.context.impl;
 
 import org.chenhan.serialAgent.context.service.config.SourceLoader;
 import org.chenhan.serialAgent.context.service.config.impl.PropertiesLoader;
-import org.chenhan.serialAgent.exception.LoaderException;
+import org.chenhan.serialAgent.exception.AgentException;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +24,7 @@ public class PropertiesLoaderTest {
         try {
             Map<String,String> map = sourceLoader.load("C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties");
             logger.info("读取文件的map配置:{}",map);
-        } catch (LoaderException e) {
+        } catch (AgentException e) {
             throw new RuntimeException(e);
         }
     }
@@ -35,7 +35,7 @@ public class PropertiesLoaderTest {
         try {
             Map<String,String> map = sourceLoader.load("Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties");
             logger.info("读取文件的map配置:{}",map);
-        } catch (LoaderException e) {
+        } catch (AgentException e) {
             e.printStackTrace();
         }
     }

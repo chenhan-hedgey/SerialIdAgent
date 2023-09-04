@@ -2,13 +2,11 @@ package org.chenhan.serialAgent.context.service.config;
 
 import org.chenhan.serialAgent.context.model.po.AgentConfig;
 import org.chenhan.serialAgent.context.model.po.DatabaseInfo;
-import org.chenhan.serialAgent.exception.LoaderException;
+import org.chenhan.serialAgent.exception.AgentException;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Map;
-
-import static org.junit.Assert.*;
 
 /**
  * @Author: chenhan
@@ -41,7 +39,7 @@ public class SysConfigTest {
             Assert.assertEquals("myuser", map.get("database.username"));
             Assert.assertEquals("mypassword", map.get("database.password"));
             Assert.assertEquals("XXX.XXX.class", map.get("database.driverClass"));
-        } catch (LoaderException e) {
+        } catch (AgentException e) {
             e.printStackTrace();
         }
 
@@ -70,7 +68,7 @@ public class SysConfigTest {
             Assert.assertEquals(databaseInfo.getPassword(),"mypassword");
             Assert.assertEquals(databaseInfo.getDriverClass(),"XXX.XXX.class");
 
-        } catch (LoaderException e) {
+        } catch (AgentException e) {
             e.printStackTrace();
         }
     }

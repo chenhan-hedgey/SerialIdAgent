@@ -1,6 +1,6 @@
 package org.chenhan.serialAgent.context.service.config;
 
-import org.chenhan.serialAgent.exception.LoaderException;
+import org.chenhan.serialAgent.exception.AgentException;
 
 import java.util.Map;
 
@@ -16,7 +16,7 @@ public interface SourceLoader {
      *
      * @param fullPath 资源的完整路径，需要被加载。
      * @return 包含加载资源内容的键值对形式的 Map。
-     * @throws LoaderException 如果加载资源时出现异常。
+     * @throws AgentException 如果加载资源时出现异常。
      */
-    public  Map<String, String> load(String fullPath) throws LoaderException;
+    public  Map<String, String> load(String fullPath) throws AgentException;
 }

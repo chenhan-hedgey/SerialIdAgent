@@ -21,7 +21,7 @@ public class TransformDemo implements AgentBuilder.Transformer{
     @Override
     public DynamicType.Builder<?> transform(DynamicType.Builder<?> builder, TypeDescription typeDescription, ClassLoader classLoader, JavaModule javaModule) {
         // 匹配指定的函数签名
-        logger.info("已进入transform方法");
+        logger.info("class:{},已进入transform方法");
         builder = builder
                 .method(ElementMatchers.named("call")
                         .and(ElementMatchers.takesArguments(String[].class))
