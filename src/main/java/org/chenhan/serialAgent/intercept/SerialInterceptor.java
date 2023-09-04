@@ -1,6 +1,5 @@
 package org.chenhan.serialAgent.intercept;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import net.bytebuddy.implementation.bind.annotation.AllArguments;
 import net.bytebuddy.implementation.bind.annotation.Origin;
 import net.bytebuddy.implementation.bind.annotation.RuntimeType;
@@ -44,6 +43,9 @@ public class SerialInterceptor {
             @Origin Method method) throws Exception {
         logger.info("进入静态拦截方法");
 
+        String clazzName = "org.tools.mockAPI.ApiCaller";
+        String functionName = "calll";
+        Class[] classes =  new Class[]{String[].class, String[].class};
         /**
          * 调用状态，是指，判断call是否执行成功（过程成功即可）
          * 如：A系统调用B，但是B系统返回一个错误，同样算成功。判断依据为，B是否成功返回结果，而非结果的校验
@@ -57,12 +59,14 @@ public class SerialInterceptor {
         Boolean isInsteadSuccess = true;
         Object result = null;
         try {
-
-            Method insteadMethod = findStaticMethod("org.tools.mockAPI.ApiCaller", "call", new Class[]{String[].class, String[].class});
-            logger.info("获取对应的class对象以及替代的class方法");
+            logger.info("正在将方法{}#{} --->  方法{}#{}",method.getName(),method.getParameterTypes(),functionName,Arrays.toString(classes));
+            logger.info("获取重定向的静态方法：{}#{}#{}中...",clazzName,functionName,Arrays.toString(classes));
+            Method insteadMethod = findStaticMethod(clazzName,functionName,classes);
             // 参数处理
+            logger.info("重新制作请求参数中...");
             List<Object> newArgs = processArgs(allArguments);
             // 调用替代方法并执行
+            logger.info("请求执行中");
             result = callInsteadMethod(insteadMethod,newArgs);
             isCallFinish = true;
             return result;
@@ -105,7 +109,7 @@ public class SerialInterceptor {
     private static Method findStaticMethod(String clazzName, String call, Class[] classes) throws AgentException {
         try {
             Class apiClazz = Class.forName(clazzName);
-            Method insteadMethod = ReflectionUtils.getStaticMethodFromClass(apiClazz, "call", new Class[]{String[].class, String[].class});
+            Method insteadMethod = ReflectionUtils.getStaticMethodFromClass(apiClazz, call, new Class[]{String[].class, String[].class});
             return insteadMethod;
         } catch (NoSuchMethodException e) {
             logger.info("没有找到对应的静态方法:{}#{}",clazzName,call);
@@ -131,6 +135,9 @@ public class SerialInterceptor {
     private static List<Object> processArgs(Object[] args)  throws AgentException {
         String className = "org.tools.serialNumber.SerialThreadData";
         String fieldName = "threadData";
+
+
+
         List<Object> newArgs = new ArrayList<>();
         newArgs.addAll(Arrays.asList(args));
         Class<?> dataClass = null;
@@ -147,6 +154,7 @@ public class SerialInterceptor {
             logger.info("未找到数据字段：{}#{}",className,fieldName);
             throw new AgentException("没有找到对应数据类的字段:"+fieldName,e);
         } catch (IllegalAccessException e) {
+            logger.info("数据字段访问非法：{}#{}",dataClass.getSimpleName(),fieldName);
             throw new AgentException("非法访问",e);
         }
     }
