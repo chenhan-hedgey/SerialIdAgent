@@ -35,9 +35,8 @@ public class SerialNumberAgent {
                 logger.error("配置文件路径为空，请检查路径");
                 return;
             }
-            // 校验
-            validatePath(arg);
-            validateProperties(arg);
+
+
             // 2.配置agent
             AgentBuilder.Default agentBuilder = new AgentBuilder.Default();
             logger.info("是否执行到了transformer实例化");

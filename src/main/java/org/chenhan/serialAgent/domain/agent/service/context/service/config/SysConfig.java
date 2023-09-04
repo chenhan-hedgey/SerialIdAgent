@@ -10,7 +10,6 @@ import org.chenhan.serialAgent.domain.agent.service.context.service.config.impl.
 import org.chenhan.serialAgent.exception.AgentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.chenhan.serialAgent.domain.agent.context.service.config.SourceLoader;
 
 import java.util.Map;
 

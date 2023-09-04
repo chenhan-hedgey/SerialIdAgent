@@ -1,6 +1,6 @@
 package org.chenhan.serialAgent.context.impl;
 
-import org.chenhan.serialAgent.domain.agent.context.service.config.SourceLoader;
+import org.chenhan.serialAgent.domain.agent.service.context.service.config.SourceLoader;
 import org.chenhan.serialAgent.domain.agent.service.context.service.config.impl.PropertiesLoader;
 import org.chenhan.serialAgent.exception.AgentException;
 import org.junit.Test;

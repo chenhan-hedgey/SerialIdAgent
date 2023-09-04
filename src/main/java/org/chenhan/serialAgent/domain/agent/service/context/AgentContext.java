@@ -11,11 +11,11 @@ import org.chenhan.serialAgent.domain.agent.service.context.service.config.SysCo
 public class AgentContext {
 
 
-
     /**
      * 系统配置
      */
     private SysConfig sysConfig;
+
 
 
 
