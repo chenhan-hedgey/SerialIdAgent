@@ -1,6 +1,6 @@
-package org.chenhan.serialAgent.domain.agent.service.context;
+package org.chenhan.serialAgent.domain.context;
 
-import org.chenhan.serialAgent.domain.agent.service.context.service.config.SysConfig;
+import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 
 /**
  * @Author: chenhan

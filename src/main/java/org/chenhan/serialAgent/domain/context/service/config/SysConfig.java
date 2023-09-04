@@ -1,12 +1,12 @@
-package org.chenhan.serialAgent.domain.agent.service.context.service.config;
+package org.chenhan.serialAgent.domain.context.service.config;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
-import org.chenhan.serialAgent.domain.agent.model.po.AgentConfig;
-import org.chenhan.serialAgent.domain.agent.model.po.DatabaseInfo;
+import org.chenhan.serialAgent.domain.context.model.po.AgentConfig;
+import org.chenhan.serialAgent.domain.context.model.po.DatabaseInfo;
 
-import org.chenhan.serialAgent.domain.agent.service.context.service.config.impl.PropertiesLoader;
+import org.chenhan.serialAgent.domain.context.service.config.impl.PropertiesLoader;
 import org.chenhan.serialAgent.exception.AgentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

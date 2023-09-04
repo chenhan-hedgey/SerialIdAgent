@@ -63,18 +63,5 @@ public class SerialNumberAgent {
 
     }
 
-    /**
-     * 校验文件路径
-     * @param path 配置文件的路径
-     */
-    private static void validateProperties(String path) {
-    }
 
-    /**
-     * 校验路径格式
-     * @param arg 文件绝对路径
-     */
-    private static void validatePath(String arg) {
-
-    }
 }

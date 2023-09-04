@@ -1,4 +1,4 @@
-package org.chenhan.serialAgent.domain.agent.model.po;
+package org.chenhan.serialAgent.domain.context.model.po;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

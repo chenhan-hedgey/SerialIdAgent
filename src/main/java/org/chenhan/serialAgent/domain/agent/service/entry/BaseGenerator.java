@@ -2,8 +2,8 @@ package org.chenhan.serialAgent.domain.agent.service.entry;
 
 import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.matcher.ElementMatcher;
-import org.apache.commons.lang3.ObjectUtils;
 import org.chenhan.serialAgent.exception.AgentException;
+import org.chenhan.serialAgent.util.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -73,7 +73,11 @@ public class BaseGenerator implements AgentGenerator {
      * 可运行检查的必须性检查
      */
     private void necessaryCheck() throws AgentException {
-
+        if (ObjectUtils.isAnyNull(agentBuilder,transformer,elementMatcher)) {
+            logger.info("agentBuilder：{}，transformer：{}，elementMatcher:{},至少存在一个为null",agentBuilder,transformer,elementMatcher);
+            new AgentException("agent运行不满足最小支持");
+        }
+        return;
     }
 
 

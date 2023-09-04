@@ -1,4 +1,4 @@
-package org.chenhan.serialAgent.domain.agent.service.context.service.config;
+package org.chenhan.serialAgent.domain.context.service.config;
 
 import org.chenhan.serialAgent.exception.AgentException;
 

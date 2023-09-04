@@ -1,6 +1,6 @@
-package org.chenhan.serialAgent.domain.agent.service.context.service.config.impl;
+package org.chenhan.serialAgent.domain.context.service.config.impl;
 
-import org.chenhan.serialAgent.domain.agent.service.context.service.config.BaseSourceLoader;
+import org.chenhan.serialAgent.domain.context.service.config.BaseSourceLoader;
 import org.chenhan.serialAgent.exception.AgentException;
 
 import java.io.FileInputStream;

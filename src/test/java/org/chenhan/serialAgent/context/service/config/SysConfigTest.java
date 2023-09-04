@@ -1,9 +1,9 @@
 package org.chenhan.serialAgent.context.service.config;
 
-import org.chenhan.serialAgent.domain.agent.model.po.AgentConfig;
-import org.chenhan.serialAgent.domain.agent.model.po.DatabaseInfo;
+import org.chenhan.serialAgent.domain.context.model.po.AgentConfig;
+import org.chenhan.serialAgent.domain.context.model.po.DatabaseInfo;
 
-import org.chenhan.serialAgent.domain.agent.service.context.service.config.SysConfig;
+import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 import org.chenhan.serialAgent.exception.AgentException;
 import org.junit.Assert;
 import org.junit.Test;
