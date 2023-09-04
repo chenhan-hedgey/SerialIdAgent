@@ -1,6 +1,8 @@
 package org.chenhan.serialAgent.util;
 
 import java.lang.reflect.Array;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Author: chenhan
@@ -9,6 +11,26 @@ import java.lang.reflect.Array;
  * @Date: 2023/9/4 12:30
  */
 public class StringUtils {
+    /**
+     * 基本类型Map
+     */
+    private static final Map<String, Class<?>> primitiveTypes = new HashMap<>();
+
+    /**
+     * 数组后缀
+     */
+    private static final String ARRAY_SUFFIX = "[]";
+    static {
+        primitiveTypes.put("byte", byte.class);
+        primitiveTypes.put("short", short.class);
+        primitiveTypes.put("int", int.class);
+        primitiveTypes.put("long", long.class);
+        primitiveTypes.put("float", float.class);
+        primitiveTypes.put("double", double.class);
+        primitiveTypes.put("char", char.class);
+        primitiveTypes.put("boolean", boolean.class);
+        primitiveTypes.put("void", void.class);
+    }
     /**
      * 根据字符串的全限定名获取对应的class对象实例数组。
      *
@@ -44,14 +66,17 @@ public class StringUtils {
      *                  例如，"java.lang.String" 或 "java.lang.String[]"
      * @return 返回与输入全限定名相对应的Class对象，如果找不到则返回null。
      * @throws ClassNotFoundException 如果输入的全限定名无法找到对应的Class对象，则抛出ClassNotFoundException。
-     * todo:暂未考虑基本类型
      */
     public static Class<?> String2Class(String className) throws ClassNotFoundException {
         if (className == null || className.isEmpty()) {
             return null;
         }
+        // 如果是基本数据类型
+        if (primitiveTypes.containsKey(className)) {
+            return primitiveTypes.get(className);
+        }
 
-        if (className.endsWith("[]")) {
+        if (className.endsWith(ARRAY_SUFFIX)) {
             // 处理数组类型
             String componentType = className.substring(0, className.length() - 2);
             Class<?> componentClass = String2Class(componentType);
