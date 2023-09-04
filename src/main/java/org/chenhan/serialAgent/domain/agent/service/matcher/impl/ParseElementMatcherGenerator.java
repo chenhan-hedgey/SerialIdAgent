@@ -15,7 +15,7 @@ public class ParseElementMatcherGenerator implements ElementMatcherGenerator {
     private static final Logger logger = LoggerFactory.getLogger(ParseElementMatcherGenerator.class);
 
     /**
-     * 条件map
+     * 条件语句
      */
     private String conditions;
 

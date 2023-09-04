@@ -6,6 +6,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.chenhan.serialAgent.domain.agent.service.builder.SerialListener;
 import org.chenhan.serialAgent.domain.agent.service.builder.TransformDemo;
+import org.chenhan.serialAgent.domain.agent.service.entry.AgentGenerator;
+import org.chenhan.serialAgent.domain.agent.service.entry.BaseGenerator;
+import org.chenhan.serialAgent.domain.agent.service.matcher.impl.CustomElementMatcherGenerator;
+import org.chenhan.serialAgent.domain.agent.service.transfomer.MethodTransformerGenerator;
+import org.chenhan.serialAgent.domain.agent.service.transfomer.TransformerGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,21 +40,14 @@ public class SerialNumberAgent {
                 logger.error("配置文件路径为空，请检查路径");
                 return;
             }
+            AgentGenerator baseGenerator = BaseGenerator.builder()
+                    .agentBuilder(new AgentBuilder.Default())
+                    .listener(new SerialListener())
+                    .elementMatcher(new CustomElementMatcherGenerator().build("type"))
+                    .transformer(new MethodTransformerGenerator().builderTransformer())
+                    .build();
+            baseGenerator.installAgent(instrumentation);
 
-
-            // 2.配置agent
-            AgentBuilder.Default agentBuilder = new AgentBuilder.Default();
-            logger.info("是否执行到了transformer实例化");
-            logger.info("是否执行到了agent安装");
-            agentBuilder
-                    // 配置监听类
-                    .with(new SerialListener())
-                    // 拦截指定类
-                    .type(ElementMatchers.named("org.tools.mockAPI.ApiCaller"))
-                    // 加载拦截器
-                    .transform(new TransformDemo())
-                    // 安装instrumentation
-                    .installOn(instrumentation);
             // 3.安装agent
             logger.info("流水号Agent结束执行...");
         }

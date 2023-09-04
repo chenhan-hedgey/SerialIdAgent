@@ -25,7 +25,7 @@ public interface TransformerGenerator {
      * 生成transformer对象
      * @return 生成的对象实例
      */
-    DynamicType.Builder builderTransformer();
+    AgentBuilder.Transformer builderTransformer();
 
     /**
      * transform模板
@@ -44,6 +44,7 @@ public interface TransformerGenerator {
          * interceptor
          */
         MethodDelegation methodDelegation;
+
 
         /**
          * Allows for a transformation of a {@link DynamicType.Builder}.

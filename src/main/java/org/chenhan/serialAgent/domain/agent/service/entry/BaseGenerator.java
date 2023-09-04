@@ -1,5 +1,9 @@
 package org.chenhan.serialAgent.domain.agent.service.entry;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.matcher.ElementMatcher;
 import org.chenhan.serialAgent.exception.AgentException;
@@ -15,6 +19,8 @@ import java.lang.instrument.Instrumentation;
  * @ProjectName: SerialNumberAgent
  * @Date: 2023/9/4 13:55
  */
+@Data
+@Builder
 public class BaseGenerator implements AgentGenerator {
     private static final Logger logger = LoggerFactory.getLogger(BaseGenerator.class);
     public BaseGenerator() {

@@ -1,5 +1,6 @@
 package org.chenhan.serialAgent.domain.agent.service.transfomer;
 
+import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.dynamic.DynamicType;
 import net.bytebuddy.implementation.MethodDelegation;
 import org.chenhan.serialAgent.domain.agent.service.intercept.SerialInterceptor;
@@ -29,13 +30,12 @@ public class MethodTransformerGenerator implements TransformerGenerator {
      * @return 生成的对象实例
      */
     @Override
-    public DynamicType.Builder builderTransformer() {
-
+    public AgentBuilder.Transformer builderTransformer() {
         MethodTransformer methodTransformer = MethodTransformer.builder()
                         .elementMatcher(elementMatcherGenerator.build("method"))
                         .methodDelegation(MethodDelegation.to(SerialInterceptor.class))
                         .build();
 
-        return null;
+        return methodTransformer;
     }
 }
