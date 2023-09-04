@@ -1,10 +1,9 @@
-package org.chenhan.serialAgent.domain.agent.service.matcher;
+package org.chenhan.serialAgent.domain.agent.service.matcher.impl;
 
 import net.bytebuddy.matcher.ElementMatcher;
+import org.chenhan.serialAgent.domain.agent.service.matcher.ElementMatcherGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Map;
 
 /**
  * @Author: chenhan
@@ -12,25 +11,24 @@ import java.util.Map;
  * @ProjectName: SerialNumberAgent
  * @Date: 2023/9/4 14:54
  */
-public class ElementMatcherGeneratorImpl implements ElementMatcherGenerator {
-    private static final Logger logger = LoggerFactory.getLogger(ElementMatcherGeneratorImpl.class);
+public class ParseElementMatcherGenerator implements ElementMatcherGenerator {
+    private static final Logger logger = LoggerFactory.getLogger(ParseElementMatcherGenerator.class);
 
     /**
      * 条件map
      */
-    private Map<String,String> conditions;
+    private String conditions;
 
 
     /**
      * 生成对应的ElementMatcher
      *
-     * @param condition 条件
+     * @param condition 参数
      * @return ElementMatcher实例
      */
     @Override
     public ElementMatcher build(String condition) {
-        ElementMatcher elementMatcher = parseCondition(condition);
-        return elementMatcher;
+        return parseCondition(condition);
     }
 
     /**

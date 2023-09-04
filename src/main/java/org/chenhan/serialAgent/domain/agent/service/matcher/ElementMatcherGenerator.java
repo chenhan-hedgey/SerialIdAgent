@@ -15,7 +15,7 @@ public interface ElementMatcherGenerator {
     /**
      * 生成对应的ElementMatcher
      *
-     * @param condition 条件map
+     * @param condition 参数
      * @return ElementMatcher实例
      */
     public ElementMatcher build(String condition) ;
