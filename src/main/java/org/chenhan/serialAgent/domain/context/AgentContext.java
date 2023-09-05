@@ -1,5 +1,6 @@
 package org.chenhan.serialAgent.domain.context;
 
+import lombok.Getter;
 import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 
 /**
@@ -8,6 +9,7 @@ import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
  * @ProjectName: SerialNumberAgent
  * @Date: 2023/9/1 10:53
  */
+@Getter
 public class AgentContext {
 
 
@@ -15,6 +17,7 @@ public class AgentContext {
      * 系统配置
      */
     private SysConfig sysConfig;
+
 
 
 

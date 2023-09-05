@@ -25,9 +25,9 @@ public class CustomElementMatcherGenerator implements ElementMatcherGenerator {
             return named("org.tools.mockAPI.ApiCaller");
         }
         else if ("method".equals(condition)){
-            return named("call")
+            return (none()).or(named("call")
                     .and(takesArguments(String[].class))
-                    .and(isStatic());
+                    .and(isStatic()));
         }
         else{
             return null;

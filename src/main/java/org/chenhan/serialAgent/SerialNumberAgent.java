@@ -5,7 +5,6 @@ import net.bytebuddy.matcher.ElementMatchers;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.chenhan.serialAgent.domain.agent.service.builder.SerialListener;
-import org.chenhan.serialAgent.domain.agent.service.builder.TransformDemo;
 import org.chenhan.serialAgent.domain.agent.service.entry.AgentGenerator;
 import org.chenhan.serialAgent.domain.agent.service.entry.BaseGenerator;
 import org.chenhan.serialAgent.domain.agent.service.matcher.impl.CustomElementMatcherGenerator;
@@ -40,6 +39,7 @@ public class SerialNumberAgent {
                 logger.error("配置文件路径为空，请检查路径");
                 return;
             }
+            logger.info("生成agent中...");
             AgentGenerator baseGenerator = BaseGenerator.builder()
                     .agentBuilder(new AgentBuilder.Default())
                     .listener(new SerialListener())
@@ -57,6 +57,7 @@ public class SerialNumberAgent {
             // 获取异常堆栈跟踪
             String stackTrace = ExceptionUtils.getStackTrace(e);
             logger.error("安装agent出错 - 错误信息: {}\n堆栈跟踪:\n{}", errorMessage, stackTrace);
+            logger.info("放弃安装agent...");
         }
 
     }

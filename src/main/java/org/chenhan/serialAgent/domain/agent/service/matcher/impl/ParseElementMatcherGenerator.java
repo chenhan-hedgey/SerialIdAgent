@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @Author: chenhan
- * @Description:
+ * @Description: 简单的matcher解析
  * @ProjectName: SerialNumberAgent
  * @Date: 2023/9/4 14:54
  */
@@ -18,6 +18,7 @@ public class ParseElementMatcherGenerator implements ElementMatcherGenerator {
      * 条件语句
      */
     private String conditions;
+
 
 
     /**
