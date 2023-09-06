@@ -1,5 +1,6 @@
 package org.chenhan.serialAgent.domain.support;
 
+import org.chenhan.serialAgent.exception.AgentException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -35,7 +36,7 @@ public class ReflectionCacheTest {
 
 
     @Test
-    public void test() throws ClassNotFoundException {
+    public void test() throws ClassNotFoundException, AgentException {
         // 测试基本类型数组
         Assert.assertEquals(int[].class, ReflectionCache.loadClass("int[].class"));
         Assert.assertEquals(byte[].class, ReflectionCache.loadClass("byte[].class"));

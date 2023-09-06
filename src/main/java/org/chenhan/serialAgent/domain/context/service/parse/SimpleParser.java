@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  * @Date: 2023/9/6 9:21
  **/
 @Data
-public class SimpleParser implements Parser{
+public class SimpleParser implements Parser {
     private static final Logger logger = LoggerFactory.getLogger(SimpleParser.class);
     /**
      * 待拦截的方法
@@ -30,6 +30,7 @@ public class SimpleParser implements Parser{
     /**
      * 转化配置文件为 Junction
      * 格式：XXX.XXX.XXX.class#method(String.class,String[].class,int.class)
+     *
      * @return Junction 实例
      */
     @Override
@@ -45,7 +46,7 @@ public class SimpleParser implements Parser{
 
         // 1. 解析方法信息
         String[] methodComponents = methodInfo.split("[()]");
-        if (methodComponents.length==0) {
+        if (methodComponents.length == 0) {
             throw new AgentException("获取函数名失败");
         }
 
@@ -61,14 +62,13 @@ public class SimpleParser implements Parser{
             try {
                 argsClasses[i] = ReflectionCache.loadClass(args[i]);
             } catch (ClassNotFoundException e) {
-                logger.info("加载方法的匹配类型失败，失败类型:{}",args[i]);
-                throw new AgentException("加载配置文件中的类型失败",e);
+                logger.info("加载方法的匹配类型失败，失败类型:{}", args[i]);
+                throw new AgentException("加载配置文件中的类型失败", e);
             }
         }
-
         // 6. 调用 ElementMatchers 中的方法，依据如下规则生成 Junction matcher
-        ElementMatcher.Junction matcher = ElementMatchers.named(methodName)
-                .and(ElementMatchers.takesArguments(argsClasses));
+        ElementMatcher.Junction
+                matcher = ElementMatchers.named(methodName).and(ElementMatchers.takesArguments(argsClasses)).and(ElementMatchers.isStatic());
 
         // 7. 返回 matcher
         return matcher;
