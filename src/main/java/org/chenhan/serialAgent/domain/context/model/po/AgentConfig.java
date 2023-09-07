@@ -51,7 +51,7 @@ public class AgentConfig {
 
     public String getInterceptClassString() throws AgentException {
         String[] arr = getStringArray(interceptMethod);
-        return arr[1];
+        return arr[0];
     }
 
     public static String[] getStringArray(String classAndMethod) throws AgentException {

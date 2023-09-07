@@ -43,7 +43,7 @@ public class ParseElementMatcherGeneratorTest {
         }
     }
     @Test
-    public void test() throws AgentException {
+    public void test_transformer() throws AgentException {
         String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties";
 
         SysConfig sysConfig = SysConfig.getSingleton();
@@ -55,5 +55,20 @@ public class ParseElementMatcherGeneratorTest {
         methodTransformerGenerator.setMethodInfo(stringArray[1]);
         AgentBuilder.Transformer transformer = methodTransformerGenerator.builderTransformer();
         //methodTransformerGenerator.setMethodInfo();
+    }
+    @Test
+    public void test_typeMatcher() throws AgentException {
+        String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties";
+
+        SysConfig sysConfig = SysConfig.getSingleton();
+        sysConfig.loadConfig(path,false);
+        AgentContext agentContext = new AgentContext(sysConfig);
+        // class name
+        ParseElementMatcherGenerator parseElementMatcherGenerator = new ParseElementMatcherGenerator();
+
+        String className = agentContext.getSysConfig().getAgentConfig().getInterceptClassString();
+        ElementMatcher typeMatcher = parseElementMatcherGenerator.build(className);
+        System.out.println(className);
+        System.out.println(typeMatcher);
     }
 }
