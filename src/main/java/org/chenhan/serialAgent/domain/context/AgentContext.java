@@ -4,6 +4,7 @@ import ch.qos.logback.core.boolex.Matcher;
 import lombok.Data;
 import net.bytebuddy.matcher.ElementMatcher;
 import net.bytebuddy.matcher.ElementMatchers;
+import org.chenhan.serialAgent.domain.context.model.po.AgentConfig;
 import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 import org.chenhan.serialAgent.domain.context.service.parse.SimpleMethodParser;
 import org.chenhan.serialAgent.domain.support.ReflectionCache;
@@ -67,7 +68,9 @@ public class AgentContext {
     public void loadContext() throws AgentException {
         // 分离
         setOriginClassName(StringUtils.classNameFormString(sysConfig.getAgentConfig().getInterceptMethod()));
-        setMethodMatcher(new SimpleMethodParser(sysConfig.getAgentConfig().getInterceptClassString()).parse());
+        String interceptMethod = sysConfig.getAgentConfig().getInterceptMethod();
+        String methodInfo = (AgentConfig.getStringArray(interceptMethod))[1];
+        setMethodMatcher(new SimpleMethodParser(methodInfo).parse());
         String tClassName = StringUtils.classNameFormString(sysConfig.getAgentConfig().getRebaseMethod());
         Class tClazz = null;
         try {
