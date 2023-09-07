@@ -17,7 +17,7 @@ public class SimpleMethodParserTest {
 
     @Test
     public void testValidMethodFormat() throws AgentException {
-        SimpleMethodParser parser = new SimpleMethodParser("XXXX.XXX.class#method(java.lang.String[].class,int.class,double[].class,java.util.Map)");
+        SimpleMethodParser parser = new SimpleMethodParser("method(java.lang.String[].class,int.class,double[].class,java.util.Map)");
         // 测试有效的方法格式
         ElementMatcher.Junction matcher = parser.parse();
         assertNotNull(matcher);

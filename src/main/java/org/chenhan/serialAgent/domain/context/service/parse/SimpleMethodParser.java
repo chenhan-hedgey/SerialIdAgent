@@ -19,30 +19,24 @@ public class SimpleMethodParser implements Parser {
     private static final Logger logger = LoggerFactory.getLogger(SimpleMethodParser.class);
     /**
      * 待拦截的方法
+     * method(String.class,String[].class,int.class)
      */
-    private String interceptMethod;
+    private String methodInfo;
 
-    public SimpleMethodParser(String interceptMethod) {
-        this.interceptMethod = interceptMethod;
+    public SimpleMethodParser(String methodInfo) {
+        this.methodInfo = methodInfo;
     }
 
 
     /**
      * 转化配置文件为 Junction
-     * 格式：XXX.XXX.XXX.class#method(String.class,String[].class,int.class)
+     * 格式：method(String.class,String[].class,int.class)
      *
      * @return Junction 实例
      */
     @Override
     public ElementMatcher.Junction parse() throws AgentException {
-        String[] split = interceptMethod.split("#");
 
-        if (split.length != 2) {
-            throw new AgentException("分离拦截方法失败");
-        }
-
-        String className = split[0];
-        String methodInfo = split[1];
 
         // 1. 解析方法信息
         String[] methodComponents = methodInfo.split("[()]");

@@ -23,4 +23,9 @@ public class AgentContextTest {
         agentContext.loadContext();
         System.out.println(agentContext);
     }
+
+    @Test
+    public void test(){
+
+    }
 }
