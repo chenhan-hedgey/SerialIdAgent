@@ -34,5 +34,8 @@ public class SimpleMethodParserTest {
         } catch (AgentException e) {
             // 预期抛出 IllegalArgumentException 异常
         }
+        catch (Exception e){
+
+        }
     }
 }

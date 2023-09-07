@@ -5,6 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
+import org.chenhan.serialAgent.domain.context.AgentContext;
+import org.chenhan.serialAgent.exception.AgentException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
@@ -19,6 +23,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AgentConfig {
+    private static final Logger logger = LoggerFactory.getLogger(AgentConfig.class);
     /**
      * 操作模式：
      * 0-真实，1-mock
@@ -43,6 +48,25 @@ public class AgentConfig {
      * 线程信息字段
      */
     private String infoObject;
+
+    public String getInterceptClassString() throws AgentException {
+        String[] arr = getStringArray(interceptMethod);
+        return arr[1];
+    }
+
+    public String[] getStringArray(String classAndMethod) throws AgentException {
+        if (classAndMethod == null || classAndMethod.length() == 0) {
+            logger.info("方法格式不正确,except:XXX.XXX.class#method(XXX),实际:{}", classAndMethod);
+            throw new AgentException("方法字符串为null");
+        }
+        String[] split = classAndMethod.split("#");
+        if (split==null||split.length!=2) {
+            logger.info("方法格式不正确,except:XXX.XXX.class#method(XXX),实际:{}", classAndMethod);
+            throw new AgentException("方法格式不正确");
+        }
+        return split;
+    }
+
 
     /**
      * 从提供的键值对映射中读取代理配置信息，并根据需要更新字段的值。

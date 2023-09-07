@@ -11,6 +11,7 @@ import net.bytebuddy.dynamic.Transformer;
 import net.bytebuddy.implementation.MethodDelegation;
 import net.bytebuddy.matcher.ElementMatcher;
 import net.bytebuddy.utility.JavaModule;
+import org.chenhan.serialAgent.exception.AgentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +26,7 @@ public interface TransformerGenerator {
      * 生成transformer对象
      * @return 生成的对象实例
      */
-    AgentBuilder.Transformer builderTransformer();
+    AgentBuilder.Transformer builderTransformer() throws AgentException;
 
     /**
      * transform模板

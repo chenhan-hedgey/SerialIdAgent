@@ -1,6 +1,7 @@
 package org.chenhan.serialAgent.domain.agent.service.matcher;
 
 import net.bytebuddy.matcher.ElementMatcher;
+import org.chenhan.serialAgent.exception.AgentException;
 
 import java.util.Map;
 
@@ -18,5 +19,5 @@ public interface ElementMatcherGenerator {
      * @param condition 参数
      * @return ElementMatcher实例
      */
-    public ElementMatcher build(String condition) ;
+    public ElementMatcher build(String condition) throws AgentException;
 }

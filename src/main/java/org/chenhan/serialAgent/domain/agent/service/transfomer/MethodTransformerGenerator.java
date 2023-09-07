@@ -6,6 +6,7 @@ import net.bytebuddy.implementation.MethodDelegation;
 import org.chenhan.serialAgent.domain.agent.service.intercept.SerialInterceptor;
 import org.chenhan.serialAgent.domain.agent.service.matcher.impl.CustomElementMatcherGenerator;
 import org.chenhan.serialAgent.domain.agent.service.matcher.ElementMatcherGenerator;
+import org.chenhan.serialAgent.exception.AgentException;
 
 /**
  * @Author: chenhan
@@ -30,7 +31,7 @@ public class MethodTransformerGenerator implements TransformerGenerator {
      * @return 生成的对象实例
      */
     @Override
-    public AgentBuilder.Transformer builderTransformer() {
+    public AgentBuilder.Transformer builderTransformer() throws AgentException {
         MethodTransformer methodTransformer = MethodTransformer.builder()
                         .elementMatcher(elementMatcherGenerator.build("method"))
                         .methodDelegation(MethodDelegation.to(SerialInterceptor.class))

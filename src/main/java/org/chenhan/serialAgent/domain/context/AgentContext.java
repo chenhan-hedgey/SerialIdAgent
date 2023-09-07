@@ -67,7 +67,7 @@ public class AgentContext {
     public void loadContext() throws AgentException {
         // 分离
         setOriginClassName(StringUtils.classNameFormString(sysConfig.getAgentConfig().getInterceptMethod()));
-        setMethodMatcher(new SimpleMethodParser(sysConfig.getAgentConfig().getInterceptMethod()).parse());
+        setMethodMatcher(new SimpleMethodParser(sysConfig.getAgentConfig().getInterceptClassString()).parse());
         String tClassName = StringUtils.classNameFormString(sysConfig.getAgentConfig().getRebaseMethod());
         Class tClazz = null;
         try {
@@ -77,6 +77,7 @@ public class AgentContext {
             throw new AgentException("没有找到待重定向的类",e);
         }
         setTargetClass(tClazz);
+
         String tMethodName = StringUtils.methodNameFormString(sysConfig.getAgentConfig().getRebaseMethod());
         String[] argsClassName = StringUtils.argsFormString(sysConfig.getAgentConfig().getRebaseMethod());
         Class[] argClasses = null;
