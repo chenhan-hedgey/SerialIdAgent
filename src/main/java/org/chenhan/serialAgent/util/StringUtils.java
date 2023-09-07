@@ -1,5 +1,7 @@
 package org.chenhan.serialAgent.util;
 
+import org.chenhan.serialAgent.exception.AgentException;
+
 import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Map;
@@ -91,4 +93,45 @@ public class StringUtils {
         return null;
     }
 
+    public static String classNameFormString(String classAndMethod) throws AgentException {
+        String[] split  = splitComponent(classAndMethod);
+        if (split.length<1){
+            throw new AgentException("函数的格式不正确，无法解析");
+        }
+        return split[0];
+    }
+
+    private static String[] splitComponent(String classAndMethod) throws AgentException {
+        String[] split = classAndMethod.split("[#()]");
+        if (split==null||split.length!=3){
+            throw new AgentException("函数格式不正确");
+        }
+        return split;
+    }
+
+
+    public static String methodNameFormString(String classAndMethod) throws AgentException {
+        String[] split = splitComponent(classAndMethod);
+        return split[1];
+    }
+
+    public static String[] argsFormString(String rebaseMethod) throws AgentException {
+        String[] split = splitComponent(rebaseMethod);
+        String[] as = split[2].split(",");
+        if (as==null) {
+            as = new String[0];
+        }
+        return as;
+    }
+
+    public static String[] getClassAndFiledFormString(String text) throws AgentException {
+        if (text==null||text.length()==0) {
+            throw new AgentException("数据字段为空");
+        }
+        String[] split = text.split("#");
+        if (split==null||split.length!=2){
+            throw new AgentException("无法解析数组字段的字符串");
+        }
+        return split;
+    }
 }

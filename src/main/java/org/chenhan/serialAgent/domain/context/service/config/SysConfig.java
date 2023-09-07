@@ -171,7 +171,7 @@ public class SysConfig {
      * 根据initialConfig更新agentConfig中所有的配置字段
      */
     private  void refresh() {
-        logger.info("配置文件已改变，正在更新字段...");
+        logger.info("正在更新配置文件...");
         agentConfig.refresh(initialConfigs);
     }
 

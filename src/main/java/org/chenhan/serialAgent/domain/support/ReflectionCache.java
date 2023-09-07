@@ -2,10 +2,12 @@ package org.chenhan.serialAgent.domain.support;
 
 import org.apache.commons.lang3.StringUtils;
 import org.chenhan.serialAgent.exception.AgentException;
+import org.chenhan.serialAgent.util.ReflectionUtils;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -115,5 +117,40 @@ public class ReflectionCache {
             className += ".class";
         }
         return classCache.get(className);
+    }
+
+    public static Class[] getArgClassArray(String[] argsClass) throws AgentException, ClassNotFoundException {
+        Class[] classes = new Class[argsClass.length];
+        for (int i = 0; i < argsClass.length; i++) {
+            classes[i] = loadClass(argsClass[i]);
+        }
+        return classes;
+    }
+
+    public static Method loadMethod(Class tClazz, String tMethodName, Class[] argClasses) throws AgentException {
+        String key = getMethodKey(tClazz, tMethodName, argClasses);
+        Method orDefault = methodCache.getOrDefault(key, null);
+        if (orDefault==null) {
+            orDefault = realLoadMethod(tClazz,tMethodName,argClasses);
+        }
+        return orDefault;
+    }
+
+    public static String getMethodKey(Class tClazz, String tMethodName, Class[] argClasses){
+        String key = tClazz.getSimpleName() + "#" +tMethodName + "(" + Arrays.toString(argClasses)+  ")";
+        return key;
+    }
+    private static Method realLoadMethod(Class tClazz, String tMethodName, Class[] argClasses) throws AgentException {
+        Method method = null;
+        try {
+            method = ReflectionUtils.getStaticMethodFromClass(tClazz, tMethodName, argClasses);
+            if (method==null) {
+                throw new NoSuchMethodException("找到的静态方法为null");
+            }
+            methodCache.put(getMethodKey(tClazz, tMethodName, argClasses),method);
+        } catch (NoSuchMethodException e) {
+            throw new AgentException("没有找到该静态方法",e);
+        }
+        return method;
     }
 }

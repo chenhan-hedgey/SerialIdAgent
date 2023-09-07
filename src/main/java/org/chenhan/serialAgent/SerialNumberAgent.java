@@ -11,6 +11,7 @@ import org.chenhan.serialAgent.domain.agent.service.entry.BaseGenerator;
 import org.chenhan.serialAgent.domain.agent.service.matcher.impl.CustomElementMatcherGenerator;
 import org.chenhan.serialAgent.domain.agent.service.transfomer.MethodTransformerGenerator;
 import org.chenhan.serialAgent.domain.agent.service.transfomer.TransformerGenerator;
+import org.chenhan.serialAgent.domain.context.AgentContext;
 import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,9 +42,9 @@ public class SerialNumberAgent {
                 logger.error("配置文件路径为空，请检查路径");
                 return;
             }
-            //SysConfig.setConfigPath(path);
             SysConfig sysConfig = SysConfig.getSingleton();
             sysConfig.loadConfig(path,false);
+            AgentContext agentContext = new AgentContext(sysConfig);
             AgentGenerator baseGenerator = BaseGenerator.builder()
                     .agentBuilder(new AgentBuilder.Default())
                     .listener(new SerialListener())
