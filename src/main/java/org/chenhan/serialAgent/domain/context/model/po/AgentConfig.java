@@ -54,7 +54,7 @@ public class AgentConfig {
         return arr[1];
     }
 
-    public String[] getStringArray(String classAndMethod) throws AgentException {
+    public static String[] getStringArray(String classAndMethod) throws AgentException {
         if (classAndMethod == null || classAndMethod.length() == 0) {
             logger.info("方法格式不正确,except:XXX.XXX.class#method(XXX),实际:{}", classAndMethod);
             throw new AgentException("方法字符串为null");

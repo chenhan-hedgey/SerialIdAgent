@@ -1,6 +1,11 @@
 package org.chenhan.serialAgent.domain.agent.service.matcher.impl;
 
+import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.matcher.ElementMatcher;
+import org.chenhan.serialAgent.domain.agent.service.transfomer.MethodTransformerGenerator;
+import org.chenhan.serialAgent.domain.context.AgentContext;
+import org.chenhan.serialAgent.domain.context.model.po.AgentConfig;
+import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 import org.chenhan.serialAgent.exception.AgentException;
 import org.junit.Test;
 
@@ -36,5 +41,19 @@ public class ParseElementMatcherGeneratorTest {
             matchers.add(build);
             System.out.println(build);
         }
+    }
+    @Test
+    public void test() throws AgentException {
+        String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties";
+
+        SysConfig sysConfig = SysConfig.getSingleton();
+        sysConfig.loadConfig(path,false);
+        AgentContext agentContext = new AgentContext(sysConfig);
+        MethodTransformerGenerator methodTransformerGenerator = new MethodTransformerGenerator(new ParseElementMatcherGenerator());
+        String interceptMethod = agentContext.getSysConfig().getAgentConfig().getInterceptMethod();
+        String[] stringArray = AgentConfig.getStringArray(interceptMethod);
+        methodTransformerGenerator.setMethodInfo(stringArray[1]);
+        AgentBuilder.Transformer transformer = methodTransformerGenerator.builderTransformer();
+        //methodTransformerGenerator.setMethodInfo();
     }
 }

@@ -45,11 +45,13 @@ public class SerialNumberAgent {
             SysConfig sysConfig = SysConfig.getSingleton();
             sysConfig.loadConfig(path,false);
             AgentContext agentContext = new AgentContext(sysConfig);
+            MethodTransformerGenerator methodTransformerGenerator = new MethodTransformerGenerator();
+            //methodTransformerGenerator.setMethodInfo();
             AgentGenerator baseGenerator = BaseGenerator.builder()
                     .agentBuilder(new AgentBuilder.Default())
                     .listener(new SerialListener())
                     .elementMatcher(new CustomElementMatcherGenerator().build("type"))
-                    .transformer(new MethodTransformerGenerator().builderTransformer())
+                    .transformer(methodTransformerGenerator.builderTransformer())
                     .build();
             baseGenerator.installAgent(instrumentation);
 
