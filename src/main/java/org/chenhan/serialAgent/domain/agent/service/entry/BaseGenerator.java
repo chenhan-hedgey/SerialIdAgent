@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.matcher.ElementMatcher;
+import org.chenhan.serialAgent.domain.context.AgentContext;
 import org.chenhan.serialAgent.exception.AgentException;
 import org.chenhan.serialAgent.util.ObjectUtils;
 import org.slf4j.Logger;
@@ -23,6 +24,7 @@ import java.lang.instrument.Instrumentation;
 @Builder
 public class BaseGenerator implements AgentGenerator {
     private static final Logger logger = LoggerFactory.getLogger(BaseGenerator.class);
+
     public BaseGenerator() {
         this(new AgentBuilder.Default());
     }
@@ -54,6 +56,7 @@ public class BaseGenerator implements AgentGenerator {
      * transformer实例
      */
     private AgentBuilder.Transformer transformer;
+
     /**
      * 安装agent
      *

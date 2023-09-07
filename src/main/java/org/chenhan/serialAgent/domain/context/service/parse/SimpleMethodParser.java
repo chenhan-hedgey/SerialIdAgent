@@ -15,14 +15,14 @@ import org.slf4j.LoggerFactory;
  * @Date: 2023/9/6 9:21
  **/
 @Data
-public class SimpleParser implements Parser {
-    private static final Logger logger = LoggerFactory.getLogger(SimpleParser.class);
+public class SimpleMethodParser implements Parser {
+    private static final Logger logger = LoggerFactory.getLogger(SimpleMethodParser.class);
     /**
      * 待拦截的方法
      */
     private String interceptMethod;
 
-    public SimpleParser(String interceptMethod) {
+    public SimpleMethodParser(String interceptMethod) {
         this.interceptMethod = interceptMethod;
     }
 

@@ -2,6 +2,7 @@ package org.chenhan.serialAgent.domain.context.service.config;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.apache.commons.lang3.StringUtils;
 import org.chenhan.serialAgent.domain.context.model.po.AgentConfig;
 import org.chenhan.serialAgent.domain.context.model.po.DatabaseInfo;
@@ -64,10 +65,10 @@ public class SysConfig {
     public static String getConfigPath(){
         return configPath;
     }
-    public SysConfig(){
+    private SysConfig(){
         this(new PropertiesLoader());
     }
-    public SysConfig(SourceLoader sourceLoader) {
+    private SysConfig(SourceLoader sourceLoader) {
         this.stateNo = 0;
         // 已有配置路径
         if (!StringUtils.isBlank(configPath)){
@@ -114,7 +115,7 @@ public class SysConfig {
      * @param useExistingConfig
      */
     public void loadConfig(String fullPath,Boolean useExistingConfig) throws AgentException {
-        logger.info("是否已有配置:{}，是否使用已有配置:{}",initialConfigs==null,useExistingConfig);
+        logger.info("是否已有配置:{}，是否使用已有配置:{}",initialConfigs!=null,useExistingConfig);
         if (initialConfigs!=null&&useExistingConfig){
             logger.info("已有的配置,直接使用");
         }
@@ -174,4 +175,15 @@ public class SysConfig {
         agentConfig.refresh(initialConfigs);
     }
 
+
+    @Override
+    public String toString() {
+        return "SysConfig{" +
+                "stateNo=" + stateNo +
+                ", sourceLoader=" + sourceLoader +
+                ", initialConfigs=" + initialConfigs +
+                ", agentConfig=" + agentConfig +
+                ", databaseInfo=" + databaseInfo +
+                '}';
+    }
 }
