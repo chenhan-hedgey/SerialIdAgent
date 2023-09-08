@@ -3,15 +3,15 @@
   - [x] 读取properties文件
   - [x] 设计loader类
   - [x] 设计读取方式
-- [ ] agent基本配置
-  - [ ] agent读取loader类
-  - [ ] agent构建transformer
+- [x] agent基本配置
+  - [x] agent读取loader类
+  - [x] agent构建transformer
   - [x] agent构建AB
   - [x] agent执行
   - [x] agent安装
   - [x] 启动不成功，不要影响源程序的执行
 - [ ] 功能
-  - [ ] mock方法
+  - [ ] ~~mock方法~~
   - [ ] 日志配置
   - [ ] 拦截方法的基本操作
   - [ ] 数据库使用
