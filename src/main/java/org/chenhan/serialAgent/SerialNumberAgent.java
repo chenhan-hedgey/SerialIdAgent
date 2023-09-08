@@ -1,11 +1,21 @@
 package org.chenhan.serialAgent;
 
 import net.bytebuddy.agent.builder.AgentBuilder;
+import net.bytebuddy.matcher.ElementMatcher;
 import net.bytebuddy.matcher.ElementMatchers;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.chenhan.serialAgent.domain.agent.service.builder.SerialListener;
 import org.chenhan.serialAgent.domain.agent.service.builder.TransformDemo;
+import org.chenhan.serialAgent.domain.agent.service.entry.AgentGenerator;
+import org.chenhan.serialAgent.domain.agent.service.entry.BaseGenerator;
+import org.chenhan.serialAgent.domain.agent.service.matcher.impl.CustomElementMatcherGenerator;
+import org.chenhan.serialAgent.domain.agent.service.matcher.impl.ParseElementMatcherGenerator;
+import org.chenhan.serialAgent.domain.agent.service.transfomer.MethodTransformerGenerator;
+import org.chenhan.serialAgent.domain.agent.service.transfomer.TransformerGenerator;
+import org.chenhan.serialAgent.domain.context.AgentContext;
+import org.chenhan.serialAgent.domain.context.model.po.AgentConfig;
+import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,22 +45,30 @@ public class SerialNumberAgent {
                 logger.error("配置文件路径为空，请检查路径");
                 return;
             }
-            // 校验
-            validatePath(arg);
-            validateProperties(arg);
-            // 2.配置agent
-            AgentBuilder.Default agentBuilder = new AgentBuilder.Default();
-            logger.info("是否执行到了transformer实例化");
-            logger.info("是否执行到了agent安装");
-            agentBuilder
-                    // 配置监听类
-                    .with(new SerialListener())
-                    // 拦截指定类
-                    .type(ElementMatchers.named("org.tools.mockAPI.ApiCaller"))
-                    // 加载拦截器
-                    .transform(new TransformDemo())
-                    // 安装instrumentation
-                    .installOn(instrumentation);
+            SysConfig sysConfig = SysConfig.getSingleton();
+            sysConfig.loadConfig(path,false);
+            AgentContext agentContext = new AgentContext(sysConfig);
+
+            ParseElementMatcherGenerator parseElementMatcherGenerator = new ParseElementMatcherGenerator();
+            MethodTransformerGenerator methodTransformerGenerator = new MethodTransformerGenerator(parseElementMatcherGenerator);
+
+            String interceptMethod = agentContext.getSysConfig().getAgentConfig().getInterceptMethod();
+            String[] stringArray = AgentConfig.getStringArray(interceptMethod);
+            methodTransformerGenerator.setMethodInfo(stringArray[1]);
+            AgentBuilder.Transformer transformer = methodTransformerGenerator.builderTransformer();
+
+            // class name
+            String className = agentContext.getSysConfig().getAgentConfig().getInterceptClassString();
+            ElementMatcher typeMatcher = parseElementMatcherGenerator.build(className);
+
+            AgentGenerator baseGenerator = BaseGenerator.builder()
+                    .agentBuilder(new AgentBuilder.Default())
+                    .listener(new SerialListener())
+                    .elementMatcher(typeMatcher)
+                    .transformer(transformer)
+                    .build();
+            baseGenerator.installAgent(instrumentation);
+
             // 3.安装agent
             logger.info("流水号Agent结束执行...");
         }
@@ -64,18 +82,5 @@ public class SerialNumberAgent {
 
     }
 
-    /**
-     * 校验文件路径
-     * @param path 配置文件的路径
-     */
-    private static void validateProperties(String path) {
-    }
 
-    /**
-     * 校验路径格式
-     * @param arg 文件绝对路径
-     */
-    private static void validatePath(String arg) {
-
-    }
 }
