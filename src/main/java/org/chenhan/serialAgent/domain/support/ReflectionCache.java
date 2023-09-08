@@ -21,7 +21,8 @@ public class ReflectionCache {
     /**
      * class的缓存
      */
-    private static Map<String,Class> classCache = new ConcurrentHashMap<>();
+    private static Map<String, Class> classCache = new ConcurrentHashMap<>();
+
     static {
         // 基本类型
         classCache.put("int.class", int.class);
@@ -45,6 +46,7 @@ public class ReflectionCache {
         classCache.put("boolean[].class", boolean[].class);
 
     }
+
     /***
      * method的缓存
      */
@@ -53,41 +55,41 @@ public class ReflectionCache {
      * field的缓存
      */
     private static Map<String, Field> fieldCache = new ConcurrentHashMap<>();
+
     /**
      * 通过字符串获取class实例
+     *
      * @param className 全限定名
      * @return class实例
      */
     public static Class loadClass(String className) throws ClassNotFoundException, AgentException {
-        if (StringUtils.isBlank(className)){
-           throw new AgentException("类名不存在");
+        if (StringUtils.isBlank(className)) {
+            throw new AgentException("类名不存在");
         }
         Class result = null;
         // 1.从缓存数据中直接获取
         result = getClass(className);
         // 2. 如果数据不存在
-        if (result==null) {
-            if (className.endsWith(".class")){
-                className = className.substring(0,className.length()-6);
+        if (result == null) {
+            if (className.endsWith(".class")) {
+                className = className.substring(0, className.length() - 6);
             }
             result = realLoad(className);
-            putClass(className,result);
+            putClass(className, result);
         }
         return result;
     }
 
     /**
-     *
      * @param className 不为空且不要包含.class
      * @return
      * @throws ClassNotFoundException
      */
     private static Class realLoad(String className) throws ClassNotFoundException {
         Class result = null;
-        if (className.endsWith("[]")){
+        if (className.endsWith("[]")) {
             result = realLoadArray(className);
-        }
-        else{
+        } else {
             result = Class.forName(className);
         }
         return result;
@@ -95,6 +97,7 @@ public class ReflectionCache {
 
     /**
      * 传入一个数组形式的对象并加载
+     *
      * @param className 如java.lang.String[]形式字符串
      * @return 生成对应形式的class数组
      */
@@ -109,11 +112,11 @@ public class ReflectionCache {
         if (!className.endsWith(".class")) {
             className += ".class";
         }
-        classCache.put(className,result);
+        classCache.put(className, result);
     }
 
     private static Class getClass(String className) {
-        if (!className.endsWith(".class")){
+        if (!className.endsWith(".class")) {
             className += ".class";
         }
         return classCache.get(className);
@@ -130,27 +133,48 @@ public class ReflectionCache {
     public static Method loadMethod(Class tClazz, String tMethodName, Class[] argClasses) throws AgentException {
         String key = getMethodKey(tClazz, tMethodName, argClasses);
         Method orDefault = methodCache.getOrDefault(key, null);
-        if (orDefault==null) {
-            orDefault = realLoadMethod(tClazz,tMethodName,argClasses);
+        if (orDefault == null) {
+            orDefault = realLoadMethod(tClazz, tMethodName, argClasses);
         }
         return orDefault;
     }
 
-    public static String getMethodKey(Class tClazz, String tMethodName, Class[] argClasses){
-        String key = tClazz.getSimpleName() + "#" +tMethodName + "(" + Arrays.toString(argClasses)+  ")";
+    public static String getMethodKey(Class tClazz, String tMethodName, Class[] argClasses) {
+        String key = tClazz.getSimpleName() + "#" + tMethodName + "(" + Arrays.toString(argClasses) + ")";
         return key;
     }
+
     private static Method realLoadMethod(Class tClazz, String tMethodName, Class[] argClasses) throws AgentException {
         Method method = null;
         try {
             method = ReflectionUtils.getStaticMethodFromClass(tClazz, tMethodName, argClasses);
-            if (method==null) {
+            if (method == null) {
                 throw new NoSuchMethodException("找到的静态方法为null");
             }
-            methodCache.put(getMethodKey(tClazz, tMethodName, argClasses),method);
+            methodCache.put(getMethodKey(tClazz, tMethodName, argClasses), method);
         } catch (NoSuchMethodException e) {
-            throw new AgentException("没有找到该静态方法",e);
+            throw new AgentException("没有找到该静态方法", e);
         }
         return method;
+    }
+
+    public static Field loadField(Class clazz, String fieldName) throws AgentException {
+        Field field = null;
+        field = getField(clazz.getSimpleName() + "#" + fieldName);
+        if (field == null) {
+            try {
+                field = ReflectionUtils.getFieldFromClass(clazz, fieldName);
+            } catch (NoSuchFieldException e) {
+                throw new AgentException("没有该静态字段", e);
+            }
+        }
+        return field;
+    }
+
+    private static Field getField(String name) throws AgentException {
+        if (name == null || name.length() == 0) {
+            throw new AgentException("name为空");
+        }
+        return fieldCache.get(name);
     }
 }

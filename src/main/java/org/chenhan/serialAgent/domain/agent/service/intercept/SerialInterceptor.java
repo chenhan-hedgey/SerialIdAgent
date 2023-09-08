@@ -4,6 +4,9 @@ import net.bytebuddy.implementation.bind.annotation.AllArguments;
 import net.bytebuddy.implementation.bind.annotation.Origin;
 import net.bytebuddy.implementation.bind.annotation.RuntimeType;
 import net.bytebuddy.implementation.bind.annotation.SuperCall;
+import org.chenhan.serialAgent.domain.agent.model.MethodDescription;
+import org.chenhan.serialAgent.domain.context.AgentContext;
+import org.chenhan.serialAgent.domain.support.ReflectionCache;
 import org.chenhan.serialAgent.exception.AgentException;
 import org.chenhan.serialAgent.util.ReflectionUtils;
 import org.slf4j.Logger;
@@ -15,6 +18,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Callable;
 
 /**
@@ -28,6 +32,14 @@ public class SerialInterceptor {
     private static final Logger logger = LoggerFactory.getLogger(SerialInterceptor.class);
 
     /**
+     * 替代的方法
+     */
+     public static MethodDescription methodDescription;
+    
+    
+    
+
+    /**
      * 拦截器方法，用于在静态方法调用过程中进行拦截和增强。
      *
      * @param allArguments   调用方法时传递的所有参数。
@@ -38,11 +50,30 @@ public class SerialInterceptor {
      */
     @RuntimeType
     public static Object interceptForStaticMethod(
-            @AllArguments Object[] allArguments,
+            @AllArguments Object[] originArguments,
             @SuperCall Callable<?> zuper,
             @Origin Method method) throws Exception {
         logger.info("进入静态拦截方法");
 
+        // 1. 从agentContext中获取Method方法
+        if (AgentContext.singleton().getTargetMethod()==null) {
+            AgentContext.singleton().loadContext();
+            if (AgentContext.singleton().getTargetMethod()==null) {
+                throw new AgentException("配置目标拦截方法不存在");
+            }
+        }
+        Method callMethod = getCallMethod(AgentContext.singleton());
+        // 2. 重新制作参数
+        List<Object> newArgs = processArgs(originArguments);
+        // 3. 执行新方法
+        // 4. 捕获异常，执行原方法
+        
+        processBeforeInterceptor();
+        process();
+        processAfterIntercept();
+        
+        
+        
         String clazzName = "org.tools.mockAPI.ApiCaller";
         String functionName = "call";
         Class[] classes =  new Class[]{String[].class, String[].class};
@@ -64,7 +95,7 @@ public class SerialInterceptor {
             Method insteadMethod = findStaticMethod(clazzName,functionName,classes);
             // 参数处理
             logger.info("重新制作请求参数中...");
-            List<Object> newArgs = processArgs(allArguments);
+            //List<Object> newArgs = processArgs(allArguments);
             // 调用替代方法并执行
             logger.info("请求执行中");
             result = callInsteadMethod(insteadMethod,newArgs);
@@ -85,6 +116,21 @@ public class SerialInterceptor {
             // 其他处理，如果收到异常回复，那么就修改状态为异常，如果收到其他回复，则进行校验判断是否成功并且修改状态
             processAfterIntercept();
         }
+    }
+
+    /**
+     * 从agentContext中获取方法
+     * @return
+     */
+    public static Method getCallMethod(AgentContext agentContext) {
+        return agentContext.getTargetMethod();
+    }
+
+    private static void process() {
+    }
+
+    private static void processBeforeInterceptor() {
+        
     }
 
     private static Object callInsteadMethod(Method insteadMethod, List<Object> newArgs) throws AgentException {
@@ -132,31 +178,40 @@ public class SerialInterceptor {
      * @return 修改后的参数
      * @throws AgentException 自定义异常
      */
-    private static List<Object> processArgs(Object[] args)  throws AgentException {
-        String className = "org.tools.serialNumber.SerialThreadData";
+    public static List<Object> processArgs(Object[] args)  throws AgentException {
+        Class dataClass1 = AgentContext.singleton().getDataClass();
+        //ReflectionCache.loadField(dataClass1,);
         String fieldName = "threadData";
-
-
-
+        Field field = ReflectionCache.loadField(dataClass1,fieldName);
         List<Object> newArgs = new ArrayList<>();
-        newArgs.addAll(Arrays.asList(args));
-        Class<?> dataClass = null;
+        newArgs.add(args);
         try {
-            dataClass = Class.forName(className);
-            Field threadData = ReflectionUtils.getFieldFromClass(dataClass, fieldName);
-            String value = ((String) ReflectionUtils.getValueFromStaticField(threadData, ThreadLocal.class).get());
-            newArgs.add(new String[]{value});
+            Map<String,String> map = ((Map<String,String>) ReflectionUtils.getValueFromStaticField(field, ThreadLocal.class).get());
+            System.out.println(map);
+            newArgs.add(new String[]{map.get("chenhan")});
             return newArgs;
-        } catch (ClassNotFoundException e) {
-            logger.info("未找到数据类：{}",className);
-            throw new AgentException("没有找到对应的数据加载类:"+className,e);
-        } catch (NoSuchFieldException e) {
-            logger.info("未找到数据字段：{}#{}",className,fieldName);
-            throw new AgentException("没有找到对应数据类的字段:"+fieldName,e);
         } catch (IllegalAccessException e) {
-            logger.info("数据字段访问非法：{}#{}",dataClass.getSimpleName(),fieldName);
-            throw new AgentException("非法访问",e);
+            throw new AgentException("没有对应的代理",e);
         }
+
+
+        //Class<?> dataClass = null;
+        //try {
+        //    dataClass = Class.forName(className);
+        //    Field threadData = ReflectionUtils.getFieldFromClass(dataClass, fieldName);
+        //    String value = ((String) ReflectionUtils.getValueFromStaticField(threadData, ThreadLocal.class).get());
+        //    newArgs.add(new String[]{value});
+        //    return newArgs;
+        //} catch (ClassNotFoundException e) {
+        //    logger.info("未找到数据类：{}",className);
+        //    throw new AgentException("没有找到对应的数据加载类:"+className,e);
+        //} catch (NoSuchFieldException e) {
+        //    logger.info("未找到数据字段：{}#{}",className,fieldName);
+        //    throw new AgentException("没有找到对应数据类的字段:"+fieldName,e);
+        //} catch (IllegalAccessException e) {
+        //    logger.info("数据字段访问非法：{}#{}",dataClass.getSimpleName(),fieldName);
+        //    throw new AgentException("非法访问",e);
+        //}
     }
 
 }

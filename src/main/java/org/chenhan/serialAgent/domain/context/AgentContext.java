@@ -25,6 +25,27 @@ import java.lang.reflect.Method;
  */
 @Data
 public class AgentContext {
+
+
+    private static AgentContext agentContext;
+
+    public AgentContext() {
+
+    }
+
+
+    public static AgentContext singleton(){
+        if (agentContext==null){
+            synchronized (AgentContext.class){
+                if (agentContext==null) {
+                    agentContext = new AgentContext();
+                }
+            }
+        }
+        return agentContext;
+    }
+
+
     private static final Logger logger = LoggerFactory.getLogger(AgentContext.class);
 
     /**
@@ -56,10 +77,26 @@ public class AgentContext {
      * 系统配置
      */
     SysConfig sysConfig;
+/**
+ * 配置文件路径
+ */
+    private String fullPath;
 
+    public void fullPathAndLoad(String fullPath) throws AgentException {
+        SysConfig singleton = SysConfig.getSingleton();
+        singleton.loadConfig(fullPath,false);
+        this.sysConfig = singleton;
+    }
+    /**
+     *
+     * @param fullPath
+     * @throws AgentException
+     */
     public AgentContext(String fullPath) throws AgentException {
-        this.sysConfig = getSysConfig();
-        sysConfig.loadConfig(fullPath,false);
+        this.fullPath = fullPath;
+        SysConfig singleton = SysConfig.getSingleton();
+        singleton.loadConfig(fullPath,false);
+        this.sysConfig = singleton;
     }
     public AgentContext (SysConfig config){
         this.sysConfig = config;

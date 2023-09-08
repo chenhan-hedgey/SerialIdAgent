@@ -47,7 +47,10 @@ public class SerialNumberAgent {
             }
             SysConfig sysConfig = SysConfig.getSingleton();
             sysConfig.loadConfig(path,false);
-            AgentContext agentContext = new AgentContext(sysConfig);
+
+            AgentContext agentContext = AgentContext.singleton();
+            agentContext.setSysConfig(sysConfig);
+            agentContext.loadContext();
 
             ParseElementMatcherGenerator parseElementMatcherGenerator = new ParseElementMatcherGenerator();
             MethodTransformerGenerator methodTransformerGenerator = new MethodTransformerGenerator(parseElementMatcherGenerator);
