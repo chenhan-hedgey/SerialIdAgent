@@ -5,13 +5,15 @@ import net.bytebuddy.implementation.bind.annotation.Origin;
 import net.bytebuddy.implementation.bind.annotation.RuntimeType;
 import net.bytebuddy.implementation.bind.annotation.SuperCall;
 import org.chenhan.serialAgent.domain.agent.model.MethodDescription;
-import org.chenhan.serialAgent.domain.context.AgentContext;
+import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 import org.chenhan.serialAgent.domain.support.ReflectionCache;
 import org.chenhan.serialAgent.exception.AgentException;
 import org.chenhan.serialAgent.util.ReflectionUtils;
+import org.chenhan.serialAgent.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -20,6 +22,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
+
+import static org.chenhan.serialAgent.domain.support.ReflectionCache.getCallMethod;
 
 /**
  * @Author: chenhan
@@ -42,7 +46,7 @@ public class SerialInterceptor {
     /**
      * 拦截器方法，用于在静态方法调用过程中进行拦截和增强。
      *
-     * @param allArguments   调用方法时传递的所有参数。
+     * @param originArguments   调用方法时传递的所有参数。
      * @param zuper          代表原始方法调用的可调用对象。
      * @param method         被拦截的方法对象。
      * @return               方法调用的返回值（如果有）。
@@ -54,29 +58,7 @@ public class SerialInterceptor {
             @SuperCall Callable<?> zuper,
             @Origin Method method) throws Exception {
         logger.info("进入静态拦截方法");
-
-        // 1. 从agentContext中获取Method方法
-        if (AgentContext.singleton().getTargetMethod()==null) {
-            AgentContext.singleton().loadContext();
-            if (AgentContext.singleton().getTargetMethod()==null) {
-                throw new AgentException("配置目标拦截方法不存在");
-            }
-        }
-        Method callMethod = getCallMethod(AgentContext.singleton());
-        // 2. 重新制作参数
-        List<Object> newArgs = processArgs(originArguments);
-        // 3. 执行新方法
-        // 4. 捕获异常，执行原方法
-        
-        processBeforeInterceptor();
-        process();
-        processAfterIntercept();
-        
-        
-        
-        String clazzName = "org.tools.mockAPI.ApiCaller";
-        String functionName = "call";
-        Class[] classes =  new Class[]{String[].class, String[].class};
+        Object result = null;
         /**
          * 调用状态，是指，判断call是否执行成功（过程成功即可）
          * 如：A系统调用B，但是B系统返回一个错误，同样算成功。判断依据为，B是否成功返回结果，而非结果的校验
@@ -88,23 +70,21 @@ public class SerialInterceptor {
          * 默认为打开
          */
         Boolean isInsteadSuccess = true;
-        Object result = null;
-        try {
-            logger.info("正在将方法{}#{} --->  方法{}#{}",method.getName(),method.getParameterTypes(),functionName,Arrays.toString(classes));
-            logger.info("获取重定向的静态方法：{}#{}#{}中...",clazzName,functionName,Arrays.toString(classes));
-            Method insteadMethod = findStaticMethod(clazzName,functionName,classes);
-            // 参数处理
-            logger.info("重新制作请求参数中...");
-            //List<Object> newArgs = processArgs(allArguments);
-            // 调用替代方法并执行
-            logger.info("请求执行中");
-            result = callInsteadMethod(insteadMethod,newArgs);
+        try{
+            // 1. 从agentContext中获取Method方法
+            SysConfig singleton = SysConfig.getSingleton();
+            String rebaseMethod = singleton.getAgentConfig().getRebaseMethod();
+            Method callMethod = getCallMethod(rebaseMethod);
+            // 2. 重新制作参数
+            List<Object> newArgs = processArgs(originArguments);
+            // 3. 执行新方法
+            result = callInsteadMethod(callMethod, newArgs);
             isCallFinish = true;
+            // 4. 捕获异常，执行原方法
             return result;
-        }
-        catch (AgentException e){
+        }catch (AgentException | RuntimeException e){
             //如果出现了 agent Exception，立即执行原方法
-            logger.info("agent执行出错，错误信息为：{}",e);
+            logger.info("agent执行出错，错误信息为：{}",e.toString());
             logger.info("立即执行原方法，完成原方法的调用");
             isInsteadSuccess = false;
             result = zuper.call();
@@ -118,20 +98,7 @@ public class SerialInterceptor {
         }
     }
 
-    /**
-     * 从agentContext中获取方法
-     * @return
-     */
-    public static Method getCallMethod(AgentContext agentContext) {
-        return agentContext.getTargetMethod();
-    }
 
-    private static void process() {
-    }
-
-    private static void processBeforeInterceptor() {
-        
-    }
 
     private static Object callInsteadMethod(Method insteadMethod, List<Object> newArgs) throws AgentException {
         try {
@@ -145,26 +112,7 @@ public class SerialInterceptor {
         }
     }
 
-    /**
-     * 寻找导向的静态方法
-     * @param clazzName
-     * @param call
-     * @param classes
-     * @return
-     */
-    private static Method findStaticMethod(String clazzName, String call, Class[] classes) throws AgentException {
-        try {
-            Class apiClazz = Class.forName(clazzName);
-            Method insteadMethod = ReflectionUtils.getStaticMethodFromClass(apiClazz, call, new Class[]{String[].class, String[].class});
-            return insteadMethod;
-        } catch (NoSuchMethodException e) {
-            logger.info("没有找到对应的静态方法:{}#{}",clazzName,call);
-            throw new AgentException("未找到重定向的静态方法", e);
-        } catch (ClassNotFoundException e) {
-            logger.info("没有找到对应的重定向类:{}",clazzName);
-            throw new AgentException("未找到对应的导向类",e);
-        }
-    }
+
 
     /**
      * todo: 执行基本操作
@@ -179,12 +127,18 @@ public class SerialInterceptor {
      * @throws AgentException 自定义异常
      */
     public static List<Object> processArgs(Object[] args)  throws AgentException {
-        Class dataClass1 = AgentContext.singleton().getDataClass();
-        //ReflectionCache.loadField(dataClass1,);
-        String fieldName = "threadData";
-        Field field = ReflectionCache.loadField(dataClass1,fieldName);
+        SysConfig singleton = SysConfig.getSingleton();
+        String infoObject = singleton.getAgentConfig().getInfoObject();
+        String[] classAndFiledFormString = StringUtils.getClassAndFiledFormString(infoObject);
+        Class klass = null;
+        try {
+            klass = ReflectionCache.loadClass(classAndFiledFormString[0]);
+        } catch (ClassNotFoundException e) {
+            throw new AgentException("加载数据类失败");
+        }
+        Field field = ReflectionCache.loadField(klass,classAndFiledFormString[1]);
         List<Object> newArgs = new ArrayList<>();
-        newArgs.add(args);
+        newArgs.addAll(Arrays.asList(args));
         try {
             Map<String,String> map = ((Map<String,String>) ReflectionUtils.getValueFromStaticField(field, ThreadLocal.class).get());
             System.out.println(map);
@@ -193,25 +147,6 @@ public class SerialInterceptor {
         } catch (IllegalAccessException e) {
             throw new AgentException("没有对应的代理",e);
         }
-
-
-        //Class<?> dataClass = null;
-        //try {
-        //    dataClass = Class.forName(className);
-        //    Field threadData = ReflectionUtils.getFieldFromClass(dataClass, fieldName);
-        //    String value = ((String) ReflectionUtils.getValueFromStaticField(threadData, ThreadLocal.class).get());
-        //    newArgs.add(new String[]{value});
-        //    return newArgs;
-        //} catch (ClassNotFoundException e) {
-        //    logger.info("未找到数据类：{}",className);
-        //    throw new AgentException("没有找到对应的数据加载类:"+className,e);
-        //} catch (NoSuchFieldException e) {
-        //    logger.info("未找到数据字段：{}#{}",className,fieldName);
-        //    throw new AgentException("没有找到对应数据类的字段:"+fieldName,e);
-        //} catch (IllegalAccessException e) {
-        //    logger.info("数据字段访问非法：{}#{}",dataClass.getSimpleName(),fieldName);
-        //    throw new AgentException("非法访问",e);
-        //}
     }
 
 }

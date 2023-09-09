@@ -122,6 +122,28 @@ public class ReflectionCache {
         return classCache.get(className);
     }
 
+    /**
+     * 从agentContext中获取方法
+     * @return
+     */
+    public static Method getCallMethod(String classAndMethod) throws AgentException {
+        String[] split = org.chenhan.serialAgent.util.StringUtils.splitComponent(classAndMethod);
+        String className = split[0];
+        String methodName = split[1];
+        Class klass = null;
+        Class[] args = null;
+        try {
+            klass = ReflectionCache.loadClass(split[0]);
+            if (split.length==3){
+                args = ReflectionCache.getArgClassArray(split[2].split(","));
+            }
+        } catch (ClassNotFoundException e) {
+            throw new AgentException("未找到指定类",e);
+        }
+
+        Method result = ReflectionCache.loadMethod(klass,methodName,args);
+        return result;
+    }
     public static Class[] getArgClassArray(String[] argsClass) throws AgentException, ClassNotFoundException {
         Class[] classes = new Class[argsClass.length];
         for (int i = 0; i < argsClass.length; i++) {
