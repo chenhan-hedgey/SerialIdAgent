@@ -81,6 +81,8 @@ public class SerialInterceptor {
             result = callInsteadMethod(callMethod, newArgs);
             isCallFinish = true;
             // 4. 捕获异常，执行原方法
+            // 其他处理，如果收到异常回复，那么就修改状态为异常，如果收到其他回复，则进行校验判断是否成功并且修改状态
+            processAfterIntercept();
             return result;
         }catch (AgentException | RuntimeException e){
             //如果出现了 agent Exception，立即执行原方法
@@ -93,8 +95,6 @@ public class SerialInterceptor {
         }
         finally {
             logger.info("流水号：{},agent状态：{},调用状态:{},结果为:\n{}","testNo.1",isInsteadSuccess,isCallFinish, result);
-            // 其他处理，如果收到异常回复，那么就修改状态为异常，如果收到其他回复，则进行校验判断是否成功并且修改状态
-            processAfterIntercept();
         }
     }
 
@@ -115,9 +115,13 @@ public class SerialInterceptor {
 
 
     /**
+     * 在这里执行操作，需要在响应的请求header设置
      * todo: 执行基本操作
      */
     private static void processAfterIntercept() {
+        // 1. 获取执行Map
+        // 2. 获取对应的id号
+        // 3. 更新对应的表
     }
 
     /**

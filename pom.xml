@@ -153,69 +153,69 @@
             </plugin>
 
             <!--shade插件-避免包名冲突-->
-            <!--<plugin>-->
-            <!--    <groupId>org.apache.maven.plugins</groupId>-->
-            <!--    <artifactId>maven-shade-plugin</artifactId>-->
-            <!--    <version>3.2.4</version>-->
-            <!--    <executions>-->
-            <!--        <execution>-->
-            <!--            <phase>package</phase>-->
-            <!--            <goals>-->
-            <!--                <goal>shade</goal>-->
-            <!--            </goals>-->
-            <!--            <configuration>-->
-            <!--                <relocations>-->
-            <!--                    &lt;!&ndash; 配置包重命名 &ndash;&gt;-->
-            <!--                    <relocation>-->
-            <!--                        <pattern>net</pattern>-->
-            <!--                        <shadedPattern>${agent.pomPrefix}.net</shadedPattern>-->
-            <!--                    </relocation>-->
-            <!--                    <relocation>-->
-            <!--                        <pattern>org</pattern>-->
-            <!--                        <shadedPattern>${agent.pomPrefix}.org</shadedPattern>-->
-            <!--                        &lt;!&ndash;排除原有的agent代码&ndash;&gt;-->
-            <!--                        <excludes>-->
-            <!--                            <exclude>${agent.package}.*</exclude>-->
-            <!--                        </excludes>-->
-            <!--                    </relocation>-->
-            <!--                    <relocation>-->
-            <!--                        <pattern>ch.qos</pattern>-->
-            <!--                        <shadedPattern>${agent.pomPrefix}.ch.qos</shadedPattern>-->
-            <!--                    </relocation>-->
-            <!--                    <relocation>-->
-            <!--                        <pattern>com</pattern>-->
-            <!--                        <shadedPattern>${agent.pomPrefix}.com</shadedPattern>-->
-            <!--                    </relocation>-->
-            <!--                    <relocation>-->
-            <!--                        <pattern>google</pattern>-->
-            <!--                        <shadedPattern>${agent.pomPrefix}.google</shadedPattern>-->
-            <!--                    </relocation>-->
-            <!--                </relocations>-->
-            <!--                &lt;!&ndash;转换器&ndash;&gt;-->
-            <!--                <transformers>-->
-            <!--                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
-            <!--                        <manifestEntries>-->
-            <!--                            &lt;!&ndash;需要改为你的Premain主类&ndash;&gt;-->
-            <!--                            <Premain-Class>${agent.premainClass}</Premain-Class>-->
-            <!--                            <Can-Redefine-Classes>true</Can-Redefine-Classes>-->
-            <!--                            <Can-Retransform-Classes>true</Can-Retransform-Classes>-->
-            <!--                        </manifestEntries>-->
-            <!--                    </transformer>-->
-            <!--                </transformers>-->
-            <!--                &lt;!&ndash;过滤器&ndash;&gt;-->
-            <!--                <filters>-->
-            <!--                    <filter>-->
-            <!--                        <artifact>*:*</artifact>-->
-            <!--                        <excludes>-->
-            <!--                            <exclude>META-INF/services/javax.servlet.ServletContainerInitializer</exclude>-->
-            <!--                            <exclude>META-INF/MANIFEST.MF</exclude>-->
-            <!--                        </excludes>-->
-            <!--                    </filter>-->
-            <!--                </filters>-->
-            <!--            </configuration>-->
-            <!--        </execution>-->
-            <!--    </executions>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <relocations>
+                                <!-- 配置包重命名 -->
+                                <relocation>
+                                    <pattern>net</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.net</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.org</shadedPattern>
+                                    <!--排除原有的agent代码-->
+                                    <excludes>
+                                        <exclude>${agent.package}.*</exclude>
+                                    </excludes>
+                                </relocation>
+                                <relocation>
+                                    <pattern>ch.qos</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.ch.qos</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>com</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.com</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>google</pattern>
+                                    <shadedPattern>${agent.pomPrefix}.google</shadedPattern>
+                                </relocation>
+                            </relocations>
+                            <!--转换器-->
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <!--需要改为你的Premain主类-->
+                                        <Premain-Class>${agent.premainClass}</Premain-Class>
+                                        <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                                        <Can-Retransform-Classes>true</Can-Retransform-Classes>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
+                            <!--过滤器-->
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/services/javax.servlet.ServletContainerInitializer</exclude>
+                                        <exclude>META-INF/MANIFEST.MF</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
