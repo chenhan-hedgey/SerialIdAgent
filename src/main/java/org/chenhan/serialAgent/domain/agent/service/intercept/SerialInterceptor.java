@@ -4,7 +4,6 @@ import net.bytebuddy.implementation.bind.annotation.AllArguments;
 import net.bytebuddy.implementation.bind.annotation.Origin;
 import net.bytebuddy.implementation.bind.annotation.RuntimeType;
 import net.bytebuddy.implementation.bind.annotation.SuperCall;
-import org.chenhan.serialAgent.domain.agent.model.MethodDescription;
 import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 import org.chenhan.serialAgent.domain.support.ReflectionCache;
 import org.chenhan.serialAgent.exception.AgentException;
@@ -35,10 +34,6 @@ public class SerialInterceptor {
 
     private static final Logger logger = LoggerFactory.getLogger(SerialInterceptor.class);
 
-    /**
-     * 替代的方法
-     */
-     public static MethodDescription methodDescription;
     
     
     

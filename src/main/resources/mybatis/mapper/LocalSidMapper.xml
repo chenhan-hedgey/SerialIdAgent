@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.chenhan.serialAgent.infrastructure.dao.ILocalSidDao">
+
+    <!--结果映射map-->
+    <resultMap id="localSidMap" type="org.chenhan.serialAgent.infrastructure.po.LocalSid">
+    <id column="id" property="id"/>
+    <result column="local_id" property="localId"/>
+    <result column="global_id" property="globalId"/>
+    <result column="parent_id" property="parentId"/>
+    <result column="ip" property="ip"/>
+    <result column="flow_id" property="flowId"/>
+    <result column="result" property="result"/>
+    <result column="status" property="status"/>
+    <result column="code_value" property="codeValue"/>
+    <result column="api_name" property="apiName"/>
+    <result column="create_time" property="createTime"/>
+    <result column="update_time" property="updateTime"/>
+</resultMap>
+
+
+    <!-- 插入局部流水号记录 -->
+        <insert id="insert" parameterType="org.chenhan.serialAgent.infrastructure.po.LocalSid">
+            INSERT INTO local_sid (local_id, global_id, parent_id, ip, flow_id,  status, api_name, create_time, update_time)
+            VALUES (#{localId}, #{globalId}, #{parentId}, #{ip}, #{flowId},  #{status} #{apiName}, #{createTime}, #{updateTime})
+        </insert>
+
+        <!-- 更新局部流水号的状态 -->
+        <update id="updateState" parameterType="org.chenhan.serialAgent.infrastructure.po.LocalSid">
+            UPDATE local_sid
+            SET status = #{status},
+                code_value = #{codeValue},
+                result = #{result}
+            WHERE id = #{id}
+        </update>
+
+</mapper>
