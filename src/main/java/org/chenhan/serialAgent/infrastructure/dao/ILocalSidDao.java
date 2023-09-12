@@ -11,9 +11,9 @@ import org.chenhan.serialAgent.infrastructure.po.LocalSid;
 public interface ILocalSidDao {
 
     /**
-     * 插入局部流水号记录
-     *
-     * @param localSid 要插入的局部流水号对象
+     * * 插入局部流水号记录
+     * @param localSid 插入的局部流水号对象
+     * @return 影响的行数
      */
     int insert(LocalSid localSid);
 

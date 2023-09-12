@@ -14,6 +14,7 @@ public interface IGlobalSidDao {
      * 插入全局流水号记录
      *
      * @param globalSid 要插入的全局流水号对象
+     * @return 影响的行数
      */
     int insert(GlobalSid globalSid);
 
