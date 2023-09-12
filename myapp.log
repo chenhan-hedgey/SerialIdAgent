@@ -145,3 +145,27 @@
 2023-09-12 17:00:20.740 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
 2023-09-12 17:00:20.766 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10000(Integer)
 2023-09-12 17:00:20.846 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 1
+2023-09-12 17:34:02.237 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 17:34:02.241 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 17:34:02.572 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-12 17:34:02.576 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-12 17:34:05.791 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-12 17:34:05.820 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@69ee81fc]
+2023-09-12 17:34:05.860 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-12 17:34:05.925 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: 测试SimpleFactory(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-12 17:34:02.559(Timestamp), 2023-09-12 17:34:02.559(Timestamp)
+2023-09-12 17:34:06.004 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-12 17:34:06.026 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Rolling back JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@69ee81fc]
+2023-09-12 17:34:06.064 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@69ee81fc]
+2023-09-12 17:34:06.098 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@69ee81fc]
+2023-09-12 17:34:37.412 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 17:34:37.415 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 17:34:37.772 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-12 17:34:37.778 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-12 17:34:41.009 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-12 17:34:41.013 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@69ee81fc]
+2023-09-12 17:34:41.054 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-12 17:34:41.097 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: 测试SimpleFactory(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-12 17:34:37.756(Timestamp), 2023-09-12 17:34:37.756(Timestamp)
+2023-09-12 17:34:41.169 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-12 17:34:41.183 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@69ee81fc]
+2023-09-12 17:34:41.221 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@69ee81fc]
+2023-09-12 17:34:41.262 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@69ee81fc]
