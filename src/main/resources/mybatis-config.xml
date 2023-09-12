@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 数据源配置 -->
+    <!--<dataSource type="POOLED">-->
+    <!--    <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+    <!--    <property name="url" value="jdbc:mysql://47.120.15.193:3306/serial"/>-->
+    <!--    <property name="username" value="root"/>-->
+    <!--    <property name="password" value="786505"/>-->
+    <!--</dataSource>-->
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC">
+                <property name="skipSetAutoCommitOnClose" value="true"/>
+            </transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://47.120.15.193:3306/serial"/>
+                <property name="username" value="root"/>
+                <property name="password" value="786505"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 设置映射器（Mapper）扫描路径 -->
+    <mappers>
+        <mapper resource="mybatis/mapper/UserMapper.xml"/>
+    </mappers>
+
+    <!-- 其他配置，例如命名规则等 -->
+</configuration>
