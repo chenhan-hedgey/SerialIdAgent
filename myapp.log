@@ -94,3 +94,54 @@
 2023-09-12 16:24:52.227 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
 2023-09-12 16:24:52.258 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 1111(Integer), 100(Integer), 10016(Integer)
 2023-09-12 16:24:52.339 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-12 16:52:27.717 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:52:27.722 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:52:52.258 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:52:52.263 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:52:52.586 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-12 16:52:52.592 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-12 16:52:55.791 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-12 16:52:55.798 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
+2023-09-12 16:52:55.827 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10016(Integer)
+2023-09-12 16:52:55.903 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 0
+2023-09-12 16:53:11.939 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:53:11.944 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:53:12.263 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-12 16:53:12.268 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-12 16:53:15.528 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-12 16:53:15.532 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6f36c2f0]
+2023-09-12 16:53:15.573 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid (local_id, global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES (?, ?, ?, ?, ?, ? ?, ?, ?)
+2023-09-12 16:53:56.622 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:53:56.627 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:53:56.959 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-12 16:53:56.965 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-12 16:53:59.985 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-12 16:53:59.988 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6f36c2f0]
+2023-09-12 16:54:00.033 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ? ?, ?, ?)
+2023-09-12 16:54:00.085 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: null, 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-12 16:53:56.945(Timestamp), 2023-09-12 16:53:56.946(Timestamp)
+2023-09-12 16:56:07.426 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:56:07.431 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:56:07.741 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-12 16:56:07.748 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-12 16:56:10.770 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-12 16:56:10.799 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6f36c2f0]
+2023-09-12 16:56:10.841 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ? ?, ?, ?)
+2023-09-12 16:56:10.878 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: 10016(Integer), 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-12 16:56:07.726(Timestamp), 2023-09-12 16:56:07.726(Timestamp)
+2023-09-12 16:58:56.969 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:58:56.974 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 16:58:57.277 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-12 16:58:57.283 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-12 16:59:00.362 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-12 16:59:00.392 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6f36c2f0]
+2023-09-12 16:59:00.434 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
+2023-09-12 16:59:00.471 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: 10016(Integer), 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-12 16:58:57.259(Timestamp), 2023-09-12 16:58:57.259(Timestamp)
+2023-09-12 16:59:00.547 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - <==    Updates: 1
+2023-09-12 16:59:00.547 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6f36c2f0]
+2023-09-12 17:00:17.284 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 17:00:17.288 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-12 17:00:17.591 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-12 17:00:17.595 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-12 17:00:20.708 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-12 17:00:20.740 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
+2023-09-12 17:00:20.766 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10000(Integer)
+2023-09-12 17:00:20.846 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 1

@@ -23,8 +23,8 @@
 
     <!-- 插入局部流水号记录 -->
         <insert id="insert" parameterType="org.chenhan.serialAgent.infrastructure.po.LocalSid">
-            INSERT INTO local_sid (local_id, global_id, parent_id, ip, flow_id,  status, api_name, create_time, update_time)
-            VALUES (#{localId}, #{globalId}, #{parentId}, #{ip}, #{flowId},  #{status} #{apiName}, #{createTime}, #{updateTime})
+            INSERT INTO local_sid ( global_id, parent_id, ip, flow_id,  status, api_name, create_time, update_time)
+            VALUES ( #{globalId}, #{parentId}, #{ip}, #{flowId},  #{status}, #{apiName}, #{createTime}, #{updateTime})
         </insert>
 
         <!-- 更新局部流水号的状态 -->

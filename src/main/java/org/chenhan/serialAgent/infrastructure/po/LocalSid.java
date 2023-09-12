@@ -23,7 +23,7 @@ public class LocalSid implements Serializable {
     /**
      * 自增ID
      */
-    private Long id;
+    private Integer id;
 
 
     /**

@@ -25,7 +25,7 @@
     </environments>
     <!-- 设置映射器（Mapper）扫描路径 -->
     <mappers>
-        <mapper resource="mybatis/mapper/UserMapper.xml"/>
+        <!--<mapper resource="mybatis/mapper/UserMapper.xml"/>-->
         <mapper resource="mybatis/mapper/LocalSidMapper.xml"/>
         <mapper resource="mybatis/mapper/GlobalSidMapper.xml"/>
     </mappers>
