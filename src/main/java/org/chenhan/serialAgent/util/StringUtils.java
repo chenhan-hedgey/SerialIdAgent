@@ -101,9 +101,9 @@ public class StringUtils {
         return split[0];
     }
 
-    private static String[] splitComponent(String classAndMethod) throws AgentException {
+    public static String[] splitComponent(String classAndMethod) throws AgentException {
         String[] split = classAndMethod.split("[#()]");
-        if (split==null||split.length!=3){
+        if (split==null||split.length<2){
             throw new AgentException("函数格式不正确");
         }
         return split;

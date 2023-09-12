@@ -9,6 +9,8 @@ import org.tools.serialNumber.SerialThreadData;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -29,7 +31,9 @@ public class OrderNumInterceptor implements HandlerInterceptor {
 
         // 2. 存放 Static Local 方案
         //SerialThreadData.serialThreadDataTest.set("benbiainiaini");
-        SerialThreadData.threadData.set("陈含" + new Random().nextInt(100));
+        Map<String,String> map = new HashMap<>();
+        map.put("chenhan","ChenWanZhou");
+        SerialThreadData.threadData.set(map);
         logger.info("设置了threadData为{}",SerialThreadData.threadData.get());
 
         // 3. 获取调用的方法和控制器的信息

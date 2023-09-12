@@ -3,7 +3,6 @@ package org.chenhan.serialAgent.domain.agent.service.matcher.impl;
 import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.matcher.ElementMatcher;
 import org.chenhan.serialAgent.domain.agent.service.transfomer.MethodTransformerGenerator;
-import org.chenhan.serialAgent.domain.context.AgentContext;
 import org.chenhan.serialAgent.domain.context.model.po.AgentConfig;
 import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 import org.chenhan.serialAgent.exception.AgentException;
@@ -11,8 +10,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @Author: chenhan
@@ -48,9 +45,8 @@ public class ParseElementMatcherGeneratorTest {
 
         SysConfig sysConfig = SysConfig.getSingleton();
         sysConfig.loadConfig(path,false);
-        AgentContext agentContext = new AgentContext(sysConfig);
         MethodTransformerGenerator methodTransformerGenerator = new MethodTransformerGenerator(new ParseElementMatcherGenerator());
-        String interceptMethod = agentContext.getSysConfig().getAgentConfig().getInterceptMethod();
+        String interceptMethod = sysConfig.getAgentConfig().getInterceptMethod();
         String[] stringArray = AgentConfig.getStringArray(interceptMethod);
         methodTransformerGenerator.setMethodInfo(stringArray[1]);
         AgentBuilder.Transformer transformer = methodTransformerGenerator.builderTransformer();
@@ -62,11 +58,10 @@ public class ParseElementMatcherGeneratorTest {
 
         SysConfig sysConfig = SysConfig.getSingleton();
         sysConfig.loadConfig(path,false);
-        AgentContext agentContext = new AgentContext(sysConfig);
         // class name
         ParseElementMatcherGenerator parseElementMatcherGenerator = new ParseElementMatcherGenerator();
 
-        String className = agentContext.getSysConfig().getAgentConfig().getInterceptClassString();
+        String className = sysConfig.getAgentConfig().getInterceptClassString();
         ElementMatcher typeMatcher = parseElementMatcherGenerator.build(className);
         System.out.println(className);
         System.out.println(typeMatcher);

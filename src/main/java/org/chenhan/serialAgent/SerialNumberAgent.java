@@ -2,18 +2,13 @@ package org.chenhan.serialAgent;
 
 import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.matcher.ElementMatcher;
-import net.bytebuddy.matcher.ElementMatchers;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.chenhan.serialAgent.domain.agent.service.builder.SerialListener;
-import org.chenhan.serialAgent.domain.agent.service.builder.TransformDemo;
 import org.chenhan.serialAgent.domain.agent.service.entry.AgentGenerator;
 import org.chenhan.serialAgent.domain.agent.service.entry.BaseGenerator;
-import org.chenhan.serialAgent.domain.agent.service.matcher.impl.CustomElementMatcherGenerator;
 import org.chenhan.serialAgent.domain.agent.service.matcher.impl.ParseElementMatcherGenerator;
 import org.chenhan.serialAgent.domain.agent.service.transfomer.MethodTransformerGenerator;
-import org.chenhan.serialAgent.domain.agent.service.transfomer.TransformerGenerator;
-import org.chenhan.serialAgent.domain.context.AgentContext;
 import org.chenhan.serialAgent.domain.context.model.po.AgentConfig;
 import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
 import org.slf4j.Logger;
@@ -47,18 +42,18 @@ public class SerialNumberAgent {
             }
             SysConfig sysConfig = SysConfig.getSingleton();
             sysConfig.loadConfig(path,false);
-            AgentContext agentContext = new AgentContext(sysConfig);
+
 
             ParseElementMatcherGenerator parseElementMatcherGenerator = new ParseElementMatcherGenerator();
             MethodTransformerGenerator methodTransformerGenerator = new MethodTransformerGenerator(parseElementMatcherGenerator);
 
-            String interceptMethod = agentContext.getSysConfig().getAgentConfig().getInterceptMethod();
+            String interceptMethod = sysConfig.getAgentConfig().getInterceptMethod();
             String[] stringArray = AgentConfig.getStringArray(interceptMethod);
             methodTransformerGenerator.setMethodInfo(stringArray[1]);
             AgentBuilder.Transformer transformer = methodTransformerGenerator.builderTransformer();
 
             // class name
-            String className = agentContext.getSysConfig().getAgentConfig().getInterceptClassString();
+            String className = sysConfig.getAgentConfig().getInterceptClassString();
             ElementMatcher typeMatcher = parseElementMatcherGenerator.build(className);
 
             AgentGenerator baseGenerator = BaseGenerator.builder()

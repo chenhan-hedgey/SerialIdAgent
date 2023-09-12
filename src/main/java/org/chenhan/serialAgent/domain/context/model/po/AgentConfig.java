@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
-import org.chenhan.serialAgent.domain.context.AgentContext;
 import org.chenhan.serialAgent.exception.AgentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
