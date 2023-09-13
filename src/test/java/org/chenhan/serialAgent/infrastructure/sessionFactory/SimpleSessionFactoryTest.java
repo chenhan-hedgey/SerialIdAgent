@@ -2,7 +2,10 @@ package org.chenhan.serialAgent.infrastructure.sessionFactory;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
+import org.chenhan.serialAgent.exception.AgentException;
 import org.chenhan.serialAgent.infrastructure.dao.IGlobalSidDao;
+import org.chenhan.serialAgent.infrastructure.druid.DruidDataSourceFactory;
 import org.chenhan.serialAgent.infrastructure.po.GlobalSid;
 import org.junit.Test;
 
@@ -19,7 +22,8 @@ import static org.junit.Assert.*;
  **/
 public class SimpleSessionFactoryTest {
     @Test
-    public void test() throws IOException {
+    public void testWithoutConfig() throws IOException {
+
         SimpleSessionFactory singleton = SimpleSessionFactory.singleton();
         singleton.build("mybatis-config.xml");
         SqlSessionFactory sqlSessionFactory = singleton.getSqlSessionFactory();
@@ -38,6 +42,26 @@ public class SimpleSessionFactoryTest {
             sqlSession.commit();
         }catch (Exception e){
 
+        }
+    }
+
+    @Test
+    public void testWithConfig() throws IOException, AgentException {
+        String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties";
+        SysConfig sysConfig = SysConfig.getSingleton();
+        sysConfig.loadConfig(path,false);
+        DruidDataSourceFactory.databaseInfo = sysConfig.getDatabaseInfo();
+        SimpleSessionFactory singleton = SimpleSessionFactory.singleton();
+        singleton.build("mybatis-config.xml");
+        SqlSessionFactory sqlSessionFactory = singleton.getSqlSessionFactory();
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            IGlobalSidDao mapper = sqlSession.getMapper(IGlobalSidDao.class);
+            GlobalSid globalSid = new GlobalSid();
+            globalSid.setId(10015);
+            globalSid.setStatus(100);
+            globalSid.setResultCode(1003);
+            mapper.updateState(globalSid);
+            sqlSession.commit();
         }
     }
 }

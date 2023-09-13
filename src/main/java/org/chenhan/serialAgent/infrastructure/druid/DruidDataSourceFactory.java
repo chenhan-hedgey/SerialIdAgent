@@ -8,20 +8,28 @@ import javax.sql.DataSource;
  * @Date: 2023/9/12 14:00
  **/
 import com.alibaba.druid.pool.DruidDataSource;
+import lombok.Data;
 import org.apache.ibatis.datasource.pooled.PooledDataSourceFactory;
+import org.chenhan.serialAgent.domain.context.model.po.DatabaseInfo;
 
 import javax.sql.DataSource;
 
+@Data
 public class DruidDataSourceFactory extends PooledDataSourceFactory {
+
+    public static DatabaseInfo databaseInfo;
+
+
     public DruidDataSourceFactory(){
         this.dataSource = createDataSource();
     }
 
     public static DataSource createDataSource() {
+
         DruidDataSource dataSource = new DruidDataSource();
-        dataSource.setUrl("jdbc:mysql://47.120.15.193:3306/serial");
-        dataSource.setUsername("root");
-        dataSource.setPassword("786505");
+        dataSource.setUrl(databaseInfo.getUrl());
+        dataSource.setUsername(databaseInfo.getUsername());
+        dataSource.setPassword(databaseInfo.getPassword());
 
         // 配置连接池参数
         dataSource.setInitialSize(5);
@@ -40,4 +48,8 @@ public class DruidDataSourceFactory extends PooledDataSourceFactory {
 
         return dataSource;
     }
+
+
+
+
 }

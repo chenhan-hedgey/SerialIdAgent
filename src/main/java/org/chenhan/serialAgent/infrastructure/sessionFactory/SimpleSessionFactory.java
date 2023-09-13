@@ -40,6 +40,11 @@ public class SimpleSessionFactory {
 
     private SqlSessionFactory sqlSessionFactory;
 
+    /**
+     * 加载SqlSessionFactory仓库
+     * @param resource mybatis配置文件路径，相对路径
+     * @throws IOException
+     */
     public void build(String resource) throws IOException {
         Reader reader = Resources.getResourceAsReader(resource);
         this.sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
