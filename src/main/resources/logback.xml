@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 定义日志输出格式 -->
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
+
+    <!-- 定义控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>${LOG_PATTERN}</Pattern>
+        </layout>
+    </appender>
+
+    <!-- 定义文件输出 -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>myapp.log</file> <!-- 定义日志文件名 -->
+        <append>true</append> <!-- 如果为 true，将在现有日志文件的末尾追加日志；如果为 false，将覆盖现有文件 -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>${LOG_PATTERN}</Pattern>
+        </layout>
+    </appender>
+
+    <!-- 根记录器配置 -->
+    <root level="DEBUG">
+        <!-- 输出到控制台 -->
+        <appender-ref ref="CONSOLE" />
+        <!-- 输出到文件 -->
+        <appender-ref ref="FILE" />
+    </root>
+
+    <!-- 特定记录器配置 -->
+    <logger name="org.chenhan.serialAgent.infrastructure" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE" />
+    </logger>
+
+</configuration>

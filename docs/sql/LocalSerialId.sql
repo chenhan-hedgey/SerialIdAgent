@@ -2,8 +2,6 @@ CREATE TABLE local_sid (
 
                            id int NOT NULL AUTO_INCREMENT COMMENT '自增ID',
 
-                           local_id int NOT NULL COMMENT '内部调用的请求',
-
                            global_id int NOT NULL COMMENT '全局流水号,从10000开始,至int的最大值',
 
                            parent_id int COMMENT '表示本次调用的父级请求id',

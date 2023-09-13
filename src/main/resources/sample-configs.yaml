@@ -4,6 +4,6 @@ agent:
   rebaseMethod: XXX.XXX.XXX.class#method(args)
   infoObject: XXX.XXX.class#field
 database:
-  url: jdbc:mysql://localhost:3306/mydb
-  username: myuser
-  password: mypassword
+  url: jdbc:mysql://47.120.15.193:3306/serial
+  username: root
+  password: 786505
