@@ -4,6 +4,9 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
+import org.chenhan.serialAgent.exception.AgentException;
+import org.chenhan.serialAgent.infrastructure.druid.DruidDataSourceFactory;
 import org.chenhan.serialAgent.infrastructure.po.GlobalSid;
 import org.chenhan.serialAgent.infrastructure.po.LocalSid;
 import org.junit.Before;
@@ -25,7 +28,11 @@ public class IGlobalSidDaoTest {
     SqlSessionFactory sqlSessionFactory;
 
     @Before
-    public void setUp() throws IOException {
+    public void setUp() throws IOException, AgentException {
+        String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties";
+        SysConfig sysConfig = SysConfig.getSingleton();
+        sysConfig.loadConfig(path,false);
+        DruidDataSourceFactory.databaseInfo = sysConfig.getDatabaseInfo();
         String resource = "mybatis-config.xml";
         Reader reader = Resources.getResourceAsReader(resource);
         this.sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
