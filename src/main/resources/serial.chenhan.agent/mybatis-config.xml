@@ -3,7 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
+    <properties>
+        <property name="resource_shade" value="serial.chenhan.agent"/>
+    </properties>
     <settings>
         <setting name="logImpl" value="SLF4J"/>
     </settings>
@@ -26,8 +28,8 @@
     <!-- 设置映射器（Mapper）扫描路径 -->
     <mappers>
         <!--<mapper resource="mybatis/mapper/UserMapper.xml"/>-->
-        <mapper resource="mybatis/mapper/LocalSidMapper.xml"/>
-        <mapper resource="mybatis/mapper/GlobalSidMapper.xml"/>
+        <mapper resource="serial.chenhan.agent/mybatis/mapper/LocalSidMapper.xml"/>
+        <mapper resource="serial.chenhan.agent/mybatis/mapper/GlobalSidMapper.xml"/>
     </mappers>
 
     <!-- 其他配置，例如命名规则等 -->

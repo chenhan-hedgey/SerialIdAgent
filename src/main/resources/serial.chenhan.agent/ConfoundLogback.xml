@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 定义日志输出格式 -->
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
+    <!--如果使用了shade进行盖包，就请将以下的内容注释掉缓存没有内容的-->
+    <property name="SHADE_PREFIX" value="package.prefix" />
+    <!--<property name="SHADE_PREFIX" value="" />-->
+
+    <!-- 定义控制台输出 -->
+    <appender name="CONSOLE" class="package.prefix.ch.qos.logback.core.ConsoleAppender">
+        <layout class="package.prefix.ch.qos.logback.classic.PatternLayout">
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </layout>
+    </appender>
+
+    <property name="APP_NAME" value="serial-agent" />
+    <property name="LOG_DIR" value="C:/Users/Administrator/Desktop/log" />
+
+    <appender name="FILE" class="package.prefix.ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/${APP_NAME}.log</file> <!-- 使用正斜杠 "/" -->
+        <append>true</append>
+        <rollingPolicy class="package.prefix.ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/${APP_NAME}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="package.prefix.ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder class="package.prefix.ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 根记录器配置 -->
+    <root level="INFO">
+        <!-- 输出到控制台 -->
+        <appender-ref ref="CONSOLE" />
+        <!-- 输出到文件 -->
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>

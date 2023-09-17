@@ -3092,3 +3092,665 @@ Unconditional classes:
 2023-09-13 13:34:00.001 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@5a709816]
 2023-09-13 13:34:00.039 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@5a709816]
 2023-09-13 13:34:00.073 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@5a709816]
+2023-09-13 13:46:07.275 [main] INFO  o.c.loader.LoaderPropertiesTest - Mock: null
+2023-09-13 13:46:07.280 [main] INFO  o.c.loader.LoaderPropertiesTest - Intercept Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class)
+2023-09-13 13:46:07.280 [main] INFO  o.c.loader.LoaderPropertiesTest - Rebase Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class)
+2023-09-13 13:46:07.280 [main] INFO  o.c.loader.LoaderPropertiesTest - Info Object: org.tools.serialNumber.SerialThreadData.class#threadData
+2023-09-13 13:46:07.281 [main] INFO  o.c.loader.LoaderPropertiesTest - Database URL: jdbc:mysql://47.120.15.193:3306/serial
+2023-09-13 13:46:07.281 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Username: root
+2023-09-13 13:46:07.281 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Password: 786505
+2023-09-13 13:46:07.298 [main] INFO  o.c.s.c.impl.PropertiesLoaderTest - 读取文件的map配置:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:07.312 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:false，是否使用已有配置:false
+2023-09-13 13:46:07.313 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:07.317 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:07.318 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:07.522 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:07.523 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:07.524 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:07.524 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:07.528 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:07.528 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:07.529 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:07.530 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:07.543 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:07.544 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:07.558 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:07.560 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:07.817 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:07.819 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:08.101 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:46:08.148 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 13:46:11.783 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-13 13:46:11.786 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 13:46:11.827 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 13:46:11.866 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: YourCaller(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 13:46:08.082(Timestamp), 2023-09-13 13:46:08.082(Timestamp)
+2023-09-13 13:46:11.938 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 13:46:11.953 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 13:46:11.993 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:11.993 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:11.994 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:11.994 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:12.001 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:12.029 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 13:46:12.030 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:46:14.276 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2023-09-13 13:46:14.276 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 13:46:14.276 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 1111(Integer), 100(Integer), 10016(Integer)
+2023-09-13 13:46:14.350 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 13:46:14.351 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:14.351 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:14.351 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:14.351 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:14.357 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:14.375 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:46:16.610 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2023-09-13 13:46:16.610 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 13:46:16.647 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
+2023-09-13 13:46:16.648 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: 10016(Integer), 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-13 13:46:14.375(Timestamp), 2023-09-13 13:46:14.375(Timestamp)
+2023-09-13 13:46:16.722 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - <==    Updates: 1
+2023-09-13 13:46:16.722 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 13:46:16.761 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:16.761 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:16.761 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:16.762 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:16.766 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:16.784 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:46:19.185 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2023-09-13 13:46:19.185 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
+2023-09-13 13:46:19.185 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10000(Integer)
+2023-09-13 13:46:19.276 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 1
+2023-09-13 13:46:19.277 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:19.277 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:19.277 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:19.278 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:19.284 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:19.296 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 13:46:19.297 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 13:46:19.298 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 13:46:19.306 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:46:21.638 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5} inited
+2023-09-13 13:46:21.639 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 13:46:21.675 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 13:46:21.675 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 100(Integer), 1003(Integer), 10015(Integer)
+2023-09-13 13:46:21.755 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 13:46:21.755 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 13:46:21.792 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 13:46:21.831 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 13:46:21.835 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:21.850 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:46:24.175 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6} inited
+2023-09-13 13:46:24.175 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 13:46:24.212 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 13:46:24.213 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: 测试SimpleFactory(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 13:46:21.85(Timestamp), 2023-09-13 13:46:21.85(Timestamp)
+2023-09-13 13:46:24.290 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 13:46:24.290 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 13:46:24.334 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 13:46:24.373 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 13:46:53.183 [main] INFO  o.c.loader.LoaderPropertiesTest - Mock: null
+2023-09-13 13:46:53.186 [main] INFO  o.c.loader.LoaderPropertiesTest - Intercept Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class)
+2023-09-13 13:46:53.186 [main] INFO  o.c.loader.LoaderPropertiesTest - Rebase Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class)
+2023-09-13 13:46:53.186 [main] INFO  o.c.loader.LoaderPropertiesTest - Info Object: org.tools.serialNumber.SerialThreadData.class#threadData
+2023-09-13 13:46:53.187 [main] INFO  o.c.loader.LoaderPropertiesTest - Database URL: jdbc:mysql://47.120.15.193:3306/serial
+2023-09-13 13:46:53.187 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Username: root
+2023-09-13 13:46:53.187 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Password: 786505
+2023-09-13 13:46:53.198 [main] INFO  o.c.s.c.impl.PropertiesLoaderTest - 读取文件的map配置:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:53.214 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:false，是否使用已有配置:false
+2023-09-13 13:46:53.214 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:53.217 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:53.217 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:53.380 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:53.381 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:53.385 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:53.386 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:53.390 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:53.391 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:53.396 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:53.396 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:53.485 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:53.485 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:53.498 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:53.499 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:54.003 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:54.006 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:54.399 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:46:54.445 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 13:46:57.576 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-13 13:46:57.580 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 13:46:57.619 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 13:46:57.670 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: YourCaller(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 13:46:54.376(Timestamp), 2023-09-13 13:46:54.376(Timestamp)
+2023-09-13 13:46:57.740 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 13:46:57.754 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 13:46:57.794 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:46:57.795 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:46:57.796 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:46:57.796 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:46:57.805 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:46:57.839 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:47:00.095 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2023-09-13 13:47:00.096 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 13:47:00.096 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 1111(Integer), 100(Integer), 10016(Integer)
+2023-09-13 13:47:00.169 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 13:47:00.171 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:47:00.171 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:47:00.171 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:47:00.172 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:47:00.178 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:47:00.202 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:47:02.392 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2023-09-13 13:47:02.393 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 13:47:02.426 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
+2023-09-13 13:47:02.427 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: 10016(Integer), 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-13 13:47:00.202(Timestamp), 2023-09-13 13:47:00.202(Timestamp)
+2023-09-13 13:47:02.494 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - <==    Updates: 1
+2023-09-13 13:47:02.494 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 13:47:02.531 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:47:02.531 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:47:02.532 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:47:02.532 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:47:02.537 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:47:02.571 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 13:47:02.572 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 13:47:02.573 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 13:47:02.574 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:47:04.742 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2023-09-13 13:47:04.742 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
+2023-09-13 13:47:04.743 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10000(Integer)
+2023-09-13 13:47:04.815 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 1
+2023-09-13 13:47:04.816 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 13:47:04.816 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 13:47:04.816 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 13:47:04.817 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 13:47:04.822 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:47:04.838 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:47:07.204 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5} inited
+2023-09-13 13:47:07.204 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 13:47:07.240 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 13:47:07.240 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 100(Integer), 1003(Integer), 10015(Integer)
+2023-09-13 13:47:07.313 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 13:47:07.313 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 13:47:07.348 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 13:47:07.384 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 13:47:07.389 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 13:47:07.403 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 13:47:09.715 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6} inited
+2023-09-13 13:47:09.715 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 13:47:09.752 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 13:47:09.753 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: 测试SimpleFactory(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 13:47:07.403(Timestamp), 2023-09-13 13:47:07.403(Timestamp)
+2023-09-13 13:47:09.830 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 13:47:09.831 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 13:47:09.866 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 13:47:09.897 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:04:39.558 [main] INFO  o.c.loader.LoaderPropertiesTest - Mock: null
+2023-09-13 14:04:39.563 [main] INFO  o.c.loader.LoaderPropertiesTest - Intercept Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class)
+2023-09-13 14:04:39.563 [main] INFO  o.c.loader.LoaderPropertiesTest - Rebase Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class)
+2023-09-13 14:04:39.564 [main] INFO  o.c.loader.LoaderPropertiesTest - Info Object: org.tools.serialNumber.SerialThreadData.class#threadData
+2023-09-13 14:04:39.564 [main] INFO  o.c.loader.LoaderPropertiesTest - Database URL: jdbc:mysql://47.120.15.193:3306/serial
+2023-09-13 14:04:39.564 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Username: root
+2023-09-13 14:04:39.564 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Password: 786505
+2023-09-13 14:04:39.585 [main] INFO  o.c.s.c.impl.PropertiesLoaderTest - 读取文件的map配置:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:04:39.602 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:false，是否使用已有配置:false
+2023-09-13 14:04:39.603 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:04:39.607 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:04:39.607 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:04:39.756 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:04:39.756 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:04:39.758 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:04:39.759 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:04:39.762 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:04:39.762 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:04:39.764 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:04:39.765 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:04:39.776 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:04:39.776 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:04:39.777 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:04:39.777 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:04:39.982 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:04:39.983 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:04:40.267 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:04:40.310 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:04:44.090 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-13 14:04:44.095 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:04:44.148 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:04:44.215 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: YourCaller(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:04:40.252(Timestamp), 2023-09-13 14:04:40.252(Timestamp)
+2023-09-13 14:04:44.301 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:04:44.318 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:04:44.370 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:04:44.371 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:04:44.371 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:04:44.371 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:04:44.379 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:04:44.404 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:04:44.405 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:04:48.619 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2023-09-13 14:04:48.619 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:04:48.619 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 1111(Integer), 100(Integer), 10016(Integer)
+2023-09-13 14:04:48.735 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:04:48.736 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:04:48.736 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:04:48.737 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:04:48.737 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:04:48.743 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:04:48.761 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:04:51.896 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2023-09-13 14:04:51.897 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:04:51.932 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:04:51.933 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: 10016(Integer), 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-13 14:04:48.761(Timestamp), 2023-09-13 14:04:48.761(Timestamp)
+2023-09-13 14:04:52.004 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - <==    Updates: 1
+2023-09-13 14:04:52.004 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:04:52.060 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:04:52.060 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:04:52.061 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:04:52.061 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:04:52.065 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:04:52.084 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:04:52.085 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:04:52.086 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:04:54.947 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2023-09-13 14:04:54.947 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
+2023-09-13 14:04:54.947 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10000(Integer)
+2023-09-13 14:04:55.065 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:04:55.066 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:04:55.067 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:04:55.067 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:04:55.067 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:04:55.078 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:04:55.092 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:04:58.341 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5} inited
+2023-09-13 14:04:58.342 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:04:58.400 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:04:58.400 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 100(Integer), 1003(Integer), 10015(Integer)
+2023-09-13 14:04:58.482 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:04:58.482 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:04:58.519 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:04:58.556 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:04:58.562 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:04:58.578 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:04:58.584 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:04:58.585 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:05:01.471 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6} inited
+2023-09-13 14:05:01.471 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:05:01.517 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:05:01.518 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: 测试SimpleFactory(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:04:58.578(Timestamp), 2023-09-13 14:04:58.578(Timestamp)
+2023-09-13 14:05:01.609 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:05:01.610 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:05:01.695 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:05:01.734 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:05:13.900 [main] INFO  o.c.loader.LoaderPropertiesTest - Mock: null
+2023-09-13 14:05:13.906 [main] INFO  o.c.loader.LoaderPropertiesTest - Intercept Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class)
+2023-09-13 14:05:13.906 [main] INFO  o.c.loader.LoaderPropertiesTest - Rebase Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class)
+2023-09-13 14:05:13.906 [main] INFO  o.c.loader.LoaderPropertiesTest - Info Object: org.tools.serialNumber.SerialThreadData.class#threadData
+2023-09-13 14:05:13.906 [main] INFO  o.c.loader.LoaderPropertiesTest - Database URL: jdbc:mysql://47.120.15.193:3306/serial
+2023-09-13 14:05:13.907 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Username: root
+2023-09-13 14:05:13.907 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Password: 786505
+2023-09-13 14:05:13.924 [main] INFO  o.c.s.c.impl.PropertiesLoaderTest - 读取文件的map配置:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:05:13.941 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:false，是否使用已有配置:false
+2023-09-13 14:05:13.942 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:05:13.947 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:05:13.947 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:05:14.229 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:05:14.230 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:05:14.231 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:05:14.231 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:05:14.235 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:05:14.235 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:05:14.236 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:05:14.237 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:05:14.251 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:05:14.251 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:05:14.252 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:05:14.252 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:05:14.469 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:05:14.471 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:05:14.760 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:05:14.798 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:05:21.233 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-13 14:05:21.236 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:05:21.277 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:05:21.319 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: YourCaller(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:05:14.743(Timestamp), 2023-09-13 14:05:14.743(Timestamp)
+2023-09-13 14:05:21.394 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:05:21.408 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:05:21.446 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:05:21.447 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:05:21.447 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:05:21.447 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:05:21.453 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:05:21.475 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:05:21.476 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:05:23.942 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2023-09-13 14:05:23.942 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:05:23.942 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 1111(Integer), 100(Integer), 10016(Integer)
+2023-09-13 14:05:24.055 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:05:24.056 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:05:24.056 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:05:24.056 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:05:24.057 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:05:24.062 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:05:24.078 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:05:27.611 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2023-09-13 14:05:27.611 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:05:27.675 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:05:27.675 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: 10016(Integer), 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-13 14:05:24.078(Timestamp), 2023-09-13 14:05:24.078(Timestamp)
+2023-09-13 14:05:27.770 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - <==    Updates: 1
+2023-09-13 14:05:27.770 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:05:27.837 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:05:27.838 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:05:27.838 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:05:27.838 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:05:27.843 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:05:27.865 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:05:27.865 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:05:27.866 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:05:30.234 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2023-09-13 14:05:30.234 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
+2023-09-13 14:05:30.234 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10000(Integer)
+2023-09-13 14:05:30.307 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:05:30.308 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:05:30.309 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:05:30.309 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:05:30.309 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:05:30.316 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:05:30.330 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:05:32.574 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5} inited
+2023-09-13 14:05:32.575 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:05:32.612 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:05:32.612 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 100(Integer), 1003(Integer), 10015(Integer)
+2023-09-13 14:05:32.686 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:05:32.686 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:05:32.731 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:05:32.773 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:05:32.780 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:05:32.796 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:05:32.839 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:05:32.840 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:05:35.044 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6} inited
+2023-09-13 14:05:35.044 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:05:35.083 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:05:35.084 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: 测试SimpleFactory(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:05:32.796(Timestamp), 2023-09-13 14:05:32.796(Timestamp)
+2023-09-13 14:05:35.160 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:05:35.160 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:05:35.203 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:05:35.240 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:06:52.421 [main] INFO  o.c.loader.LoaderPropertiesTest - Mock: null
+2023-09-13 14:06:52.427 [main] INFO  o.c.loader.LoaderPropertiesTest - Intercept Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class)
+2023-09-13 14:06:52.427 [main] INFO  o.c.loader.LoaderPropertiesTest - Rebase Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class)
+2023-09-13 14:06:52.427 [main] INFO  o.c.loader.LoaderPropertiesTest - Info Object: org.tools.serialNumber.SerialThreadData.class#threadData
+2023-09-13 14:06:52.427 [main] INFO  o.c.loader.LoaderPropertiesTest - Database URL: jdbc:mysql://47.120.15.193:3306/serial
+2023-09-13 14:06:52.427 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Username: root
+2023-09-13 14:06:52.428 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Password: 786505
+2023-09-13 14:06:52.449 [main] INFO  o.c.s.c.impl.PropertiesLoaderTest - 读取文件的map配置:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:06:52.469 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:false，是否使用已有配置:false
+2023-09-13 14:06:52.470 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:06:52.475 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:06:52.476 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:06:52.716 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:06:52.717 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:06:52.718 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:06:52.719 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:06:52.722 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:06:52.723 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:06:52.725 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:06:52.725 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:06:52.736 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:06:52.737 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:06:52.739 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:06:52.739 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:06:52.937 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:06:52.940 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:06:53.236 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:06:53.280 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:06:56.527 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-13 14:06:56.532 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:06:56.572 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:06:56.615 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: YourCaller(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:06:53.219(Timestamp), 2023-09-13 14:06:53.219(Timestamp)
+2023-09-13 14:06:56.687 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:06:56.702 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:06:56.743 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:06:56.744 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:06:56.745 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:06:56.746 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:06:56.754 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:06:56.787 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:06:56.800 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:06:58.925 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2023-09-13 14:06:58.925 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:06:58.925 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 1111(Integer), 100(Integer), 10016(Integer)
+2023-09-13 14:06:58.994 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:06:58.996 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:06:58.996 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:06:58.996 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:06:58.997 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:06:59.003 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:06:59.021 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:07:01.254 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2023-09-13 14:07:01.254 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:07:01.290 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:07:01.291 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: 10016(Integer), 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-13 14:06:59.021(Timestamp), 2023-09-13 14:06:59.021(Timestamp)
+2023-09-13 14:07:01.374 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - <==    Updates: 1
+2023-09-13 14:07:01.374 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:07:01.415 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:07:01.415 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:07:01.415 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:07:01.415 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:07:01.420 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:07:01.436 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:07:01.439 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:07:01.440 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:07:03.733 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2023-09-13 14:07:03.734 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
+2023-09-13 14:07:03.734 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10000(Integer)
+2023-09-13 14:07:03.817 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:07:03.818 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:07:03.818 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:07:03.819 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:07:03.819 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:07:03.827 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:07:03.844 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:07:06.056 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5} inited
+2023-09-13 14:07:06.056 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:07:06.091 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:07:06.092 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 100(Integer), 1003(Integer), 10015(Integer)
+2023-09-13 14:07:06.164 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:07:06.164 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:07:06.199 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:07:06.240 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:07:06.245 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:07:06.256 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:07:06.353 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:07:06.354 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:07:08.577 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6} inited
+2023-09-13 14:07:08.578 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:07:08.612 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:07:08.612 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: 测试SimpleFactory(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:07:06.256(Timestamp), 2023-09-13 14:07:06.256(Timestamp)
+2023-09-13 14:07:08.677 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:07:08.677 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:07:08.778 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:07:08.826 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:08:44.907 [main] INFO  o.c.loader.LoaderPropertiesTest - Mock: null
+2023-09-13 14:08:44.913 [main] INFO  o.c.loader.LoaderPropertiesTest - Intercept Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class)
+2023-09-13 14:08:44.913 [main] INFO  o.c.loader.LoaderPropertiesTest - Rebase Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class)
+2023-09-13 14:08:44.913 [main] INFO  o.c.loader.LoaderPropertiesTest - Info Object: org.tools.serialNumber.SerialThreadData.class#threadData
+2023-09-13 14:08:44.914 [main] INFO  o.c.loader.LoaderPropertiesTest - Database URL: jdbc:mysql://47.120.15.193:3306/serial
+2023-09-13 14:08:44.914 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Username: root
+2023-09-13 14:08:44.914 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Password: 786505
+2023-09-13 14:08:44.933 [main] INFO  o.c.s.c.impl.PropertiesLoaderTest - 读取文件的map配置:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:08:44.952 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:false，是否使用已有配置:false
+2023-09-13 14:08:44.953 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:08:44.957 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:08:44.957 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:08:45.134 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:08:45.135 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:08:45.136 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:08:45.136 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:08:45.140 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:08:45.140 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:08:45.142 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:08:45.142 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:08:45.155 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:08:45.155 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:08:45.156 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:08:45.157 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:08:45.430 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:08:45.432 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:08:45.730 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:08:45.777 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:08:48.939 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-13 14:08:48.942 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:08:49.047 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:08:49.085 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: YourCaller(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:08:45.71(Timestamp), 2023-09-13 14:08:45.71(Timestamp)
+2023-09-13 14:08:49.160 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:08:49.174 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:08:49.214 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:08:49.215 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:08:49.215 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:08:49.215 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:08:49.220 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:08:49.241 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:08:49.242 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:08:51.732 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2023-09-13 14:08:51.732 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:08:51.733 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 1111(Integer), 100(Integer), 10016(Integer)
+2023-09-13 14:08:51.824 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:08:51.825 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:08:51.825 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:08:51.826 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:08:51.826 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:08:51.832 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:08:51.850 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:08:54.542 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2023-09-13 14:08:54.542 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:08:54.582 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:08:54.582 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: 10016(Integer), 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-13 14:08:51.85(Timestamp), 2023-09-13 14:08:51.85(Timestamp)
+2023-09-13 14:08:54.660 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - <==    Updates: 1
+2023-09-13 14:08:54.660 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:08:54.714 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:08:54.715 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:08:54.715 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:08:54.715 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:08:54.720 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:08:54.734 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:08:54.738 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:08:54.739 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:08:57.262 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2023-09-13 14:08:57.263 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
+2023-09-13 14:08:57.263 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10000(Integer)
+2023-09-13 14:08:57.351 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:08:57.352 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:08:57.352 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:08:57.352 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:08:57.353 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:08:57.358 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:08:57.374 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:09:00.887 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5} inited
+2023-09-13 14:09:00.887 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:09:00.924 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:09:00.925 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 100(Integer), 1003(Integer), 10015(Integer)
+2023-09-13 14:09:01.000 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:09:01.000 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:09:01.037 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:09:01.074 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:09:01.078 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:09:01.091 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:09:01.163 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:09:01.164 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:09:03.415 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6} inited
+2023-09-13 14:09:03.415 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:09:03.454 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:09:03.455 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: 测试SimpleFactory(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:09:01.091(Timestamp), 2023-09-13 14:09:01.091(Timestamp)
+2023-09-13 14:09:03.526 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:09:03.526 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:09:03.564 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:09:03.604 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:25:31.267 [main] INFO  o.c.loader.LoaderPropertiesTest - Mock: null
+2023-09-13 14:25:31.271 [main] INFO  o.c.loader.LoaderPropertiesTest - Intercept Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class)
+2023-09-13 14:25:31.272 [main] INFO  o.c.loader.LoaderPropertiesTest - Rebase Method: org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class)
+2023-09-13 14:25:31.272 [main] INFO  o.c.loader.LoaderPropertiesTest - Info Object: org.tools.serialNumber.SerialThreadData.class#threadData
+2023-09-13 14:25:31.272 [main] INFO  o.c.loader.LoaderPropertiesTest - Database URL: jdbc:mysql://47.120.15.193:3306/serial
+2023-09-13 14:25:31.272 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Username: root
+2023-09-13 14:25:31.272 [main] INFO  o.c.loader.LoaderPropertiesTest - Database Password: 786505
+2023-09-13 14:25:31.299 [main] INFO  o.c.s.c.impl.PropertiesLoaderTest - 读取文件的map配置:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:25:31.315 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:false，是否使用已有配置:false
+2023-09-13 14:25:31.316 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:25:31.320 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:25:31.320 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:25:31.572 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:25:31.572 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:25:31.573 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:25:31.574 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:25:31.577 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:25:31.578 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:25:31.579 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:25:31.579 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:25:31.592 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:25:31.592 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:25:31.593 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:25:31.594 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:25:31.793 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:25:31.795 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:25:32.054 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:25:32.096 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:25:35.327 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2023-09-13 14:25:35.331 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:25:35.371 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:25:35.412 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: YourCaller(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:25:32.033(Timestamp), 2023-09-13 14:25:32.033(Timestamp)
+2023-09-13 14:25:35.485 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:25:35.499 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@3e6104fc]
+2023-09-13 14:25:35.543 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:25:35.543 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:25:35.544 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:25:35.544 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:25:35.555 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:25:35.587 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:25:35.588 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:25:37.819 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-2} inited
+2023-09-13 14:25:37.820 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:25:37.820 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 1111(Integer), 100(Integer), 10016(Integer)
+2023-09-13 14:25:37.890 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:25:37.891 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:25:37.891 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:25:37.892 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:25:37.892 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:25:37.898 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:25:37.916 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:25:40.110 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-3} inited
+2023-09-13 14:25:40.110 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:25:40.144 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==>  Preparing: INSERT INTO local_sid ( global_id, parent_id, ip, flow_id, status, api_name, create_time, update_time) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:25:40.145 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - ==> Parameters: 10016(Integer), 12138(Integer), 192.168.1.101(String), 123425(Integer), 0(Integer), chenhan(String), 2023-09-13 14:25:37.916(Timestamp), 2023-09-13 14:25:37.916(Timestamp)
+2023-09-13 14:25:40.213 [main] DEBUG o.c.s.i.dao.ILocalSidDao.insert - <==    Updates: 1
+2023-09-13 14:25:40.214 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7749bf93]
+2023-09-13 14:25:40.251 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:25:40.252 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:25:40.253 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:25:40.253 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:25:40.258 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:25:40.277 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:25:40.280 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:25:40.281 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:25:42.522 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-4} inited
+2023-09-13 14:25:42.523 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==>  Preparing: UPDATE local_sid SET status = ?, code_value = ?, result = ? WHERE id = ?
+2023-09-13 14:25:42.523 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - ==> Parameters: 1223(Integer), 1222(Integer), 调用的结果(String), 10000(Integer)
+2023-09-13 14:25:42.602 [main] DEBUG o.c.s.i.dao.ILocalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:25:42.603 [main] INFO  o.c.s.d.c.service.config.SysConfig - 是否已有配置:true，是否使用已有配置:false
+2023-09-13 14:25:42.603 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在加载配置路径为C:\Users\Administrator\Desktop\readCode\SerialNumberAgent\src\main\resources\sample-configs.properties
+2023-09-13 14:25:42.604 [main] INFO  o.c.s.d.c.service.config.SysConfig - 正在更新配置文件...
+2023-09-13 14:25:42.604 [main] INFO  o.c.s.d.c.service.config.SysConfig - 已有的配置信息为:{database.username=root, agent.interceptMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class), database.driverClass=XXX.XXX.class, database.password=786505, database.url=jdbc:mysql://47.120.15.193:3306/serial, agent.rebaseMethod=org.tools.mockAPI.ApiCaller.class#call(java.lang.String[].class,java.lang.String[].class), agent.state=0, agent.logPath=XXX/XXX/dir/, agent.infoObject=org.tools.serialNumber.SerialThreadData.class#threadData}
+2023-09-13 14:25:42.611 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:25:42.628 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:25:44.834 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-5} inited
+2023-09-13 14:25:44.835 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:25:44.870 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==>  Preparing: UPDATE global_sid SET status = ?, result_code = ? WHERE id = ?
+2023-09-13 14:25:44.870 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - ==> Parameters: 100(Integer), 1003(Integer), 10015(Integer)
+2023-09-13 14:25:44.935 [main] DEBUG o.c.s.i.d.IGlobalSidDao.updateState - <==    Updates: 1
+2023-09-13 14:25:44.935 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:25:44.966 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:25:44.996 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@32a68f4f]
+2023-09-13 14:25:45.001 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2023-09-13 14:25:45.012 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Opening JDBC Connection
+2023-09-13 14:25:45.092 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:25:45.093 [Finalizer] DEBUG o.a.i.d.pooled.PooledDataSource - PooledDataSource forcefully closed/removed all connections.
+2023-09-13 14:25:47.179 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-6} inited
+2023-09-13 14:25:47.179 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:25:47.215 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==>  Preparing: INSERT INTO `global_sid` (caller, flow_id, status, ip, tx_code, create_time, update_time) VALUES (?, ?, ?, ?, ?, ?, ?)
+2023-09-13 14:25:47.216 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - ==> Parameters: 测试SimpleFactory(String), 123425(Integer), 0(Integer), 192.168.1.101(String), TestCode(String), 2023-09-13 14:25:45.012(Timestamp), 2023-09-13 14:25:45.012(Timestamp)
+2023-09-13 14:25:47.292 [main] DEBUG o.c.s.i.dao.IGlobalSidDao.insert - <==    Updates: 1
+2023-09-13 14:25:47.292 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Committing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:25:47.331 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]
+2023-09-13 14:25:47.366 [main] DEBUG o.a.i.t.jdbc.JdbcTransaction - Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@8ad6665]

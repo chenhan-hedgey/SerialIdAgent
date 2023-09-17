@@ -71,27 +71,52 @@
             <configuration>
               <relocations>
                 <relocation>
-                  <pattern>net</pattern>
-                  <shadedPattern>${agent.pomPrefix}.net</shadedPattern>
+                  <pattern>net.bytebuddy</pattern>
+                  <shadedPattern>${agent.pomPrefix}.net.bytebuddy</shadedPattern>
                 </relocation>
                 <relocation>
-                  <pattern>org</pattern>
-                  <shadedPattern>${agent.pomPrefix}.org</shadedPattern>
-                  <excludes>
-                    <exclude>${agent.package}.*</exclude>
-                  </excludes>
+                  <pattern>com.alibaba.druid</pattern>
+                  <shadedPattern>${agent.pomPrefix}.com.alibaba.druid</shadedPattern>
                 </relocation>
                 <relocation>
-                  <pattern>ch.qos</pattern>
-                  <shadedPattern>${agent.pomPrefix}.ch.qos</shadedPattern>
+                  <pattern>google.protobuf</pattern>
+                  <shadedPattern>${agent.pomPrefix}.google.protobuf</shadedPattern>
                 </relocation>
                 <relocation>
-                  <pattern>com</pattern>
-                  <shadedPattern>${agent.pomPrefix}.com</shadedPattern>
+                  <pattern>com.google.protobuf</pattern>
+                  <shadedPattern>${agent.pomPrefix}.com.google.protobuf</shadedPattern>
                 </relocation>
                 <relocation>
-                  <pattern>google</pattern>
-                  <shadedPattern>${agent.pomPrefix}.google</shadedPattern>
+                  <pattern>com.mysql.cj</pattern>
+                  <shadedPattern>${agent.pomPrefix}.com.mysql.cj</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>com.mysql.jdbc</pattern>
+                  <shadedPattern>${agent.pomPrefix}.com.mysql.jdbc</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>ch.qos.logback.classic</pattern>
+                  <shadedPattern>${agent.pomPrefix}.ch.qos.logback.classic</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>ch.qos.logback.core</pattern>
+                  <shadedPattern>${agent.pomPrefix}.ch.qos.logback.core</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>mybatis.mapper</pattern>
+                  <shadedPattern>${agent.pomPrefix}.mybatis.mapper</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>org.apache.commons.lang3</pattern>
+                  <shadedPattern>${agent.pomPrefix}.org.apache.commons.lang3</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>org.apache.ibatis</pattern>
+                  <shadedPattern>${agent.pomPrefix}.org.apache.ibatis</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>org.slf4j</pattern>
+                  <shadedPattern>${agent.pomPrefix}.slf4j</shadedPattern>
                 </relocation>
               </relocations>
               <transformers>
@@ -136,34 +161,6 @@
       <artifactId>lombok</artifactId>
       <version>1.18.24</version>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-      <version>2.6.2</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>spring-boot-starter</artifactId>
-          <groupId>org.springframework.boot</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>spring-boot-starter-json</artifactId>
-          <groupId>org.springframework.boot</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>spring-boot-starter-tomcat</artifactId>
-          <groupId>org.springframework.boot</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>spring-web</artifactId>
-          <groupId>org.springframework</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>spring-webmvc</artifactId>
-          <groupId>org.springframework</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
   </dependencies>
   <properties>

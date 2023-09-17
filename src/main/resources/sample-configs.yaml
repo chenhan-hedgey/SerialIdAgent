@@ -1,9 +1,0 @@
-agent:
-  mock: true
-  interceptMethod: XXX.XXX.XXX.class#method(args)
-  rebaseMethod: XXX.XXX.XXX.class#method(args)
-  infoObject: XXX.XXX.class#field
-database:
-  url: jdbc:mysql://47.120.15.193:3306/serial
-  username: root
-  password: 786505

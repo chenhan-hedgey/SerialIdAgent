@@ -1,5 +1,7 @@
 package org.chenhan.serialAgent;
 
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.joran.JoranConfigurator;
 import net.bytebuddy.agent.builder.AgentBuilder;
 import net.bytebuddy.matcher.ElementMatcher;
 import org.apache.commons.lang3.StringUtils;
@@ -11,6 +13,8 @@ import org.chenhan.serialAgent.domain.agent.service.matcher.impl.ParseElementMat
 import org.chenhan.serialAgent.domain.agent.service.transfomer.MethodTransformerGenerator;
 import org.chenhan.serialAgent.domain.context.model.po.AgentConfig;
 import org.chenhan.serialAgent.domain.context.service.config.SysConfig;
+import org.chenhan.serialAgent.domain.support.LogbackConfig;
+import org.chenhan.serialAgent.exception.AgentException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,18 +35,21 @@ public class SerialNumberAgent {
      */
     public static void premain(String arg, Instrumentation instrumentation)  {
         try {
-            String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\sample-configs.properties";
-            arg = path;
-            logger.info("流水号Agent开始执行,配置路径为:{}...",arg);
+            String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\serial.chenhan.agent\\sample-configs.properties";
+            path = arg==null?path:arg;
+            //System.out.println("日志对象为："  + logger.getClass());
+            logger.info("流水号Agent开始执行,配置路径为:{}...",path);
+            System.out.println("日志没有打印");
 
             // 1.加载配置文件，初始化配置
-            if (StringUtils.isBlank(arg)) {
+            if (StringUtils.isBlank(path)) {
                 logger.error("配置文件路径为空，请检查路径");
                 return;
             }
             SysConfig sysConfig = SysConfig.getSingleton();
             sysConfig.loadConfig(path,false);
 
+            LogbackConfig.configureLogback(sysConfig.getInitialConfigs().get("agent.logConfigPath"));
 
             ParseElementMatcherGenerator parseElementMatcherGenerator = new ParseElementMatcherGenerator();
             MethodTransformerGenerator methodTransformerGenerator = new MethodTransformerGenerator(parseElementMatcherGenerator);
@@ -67,15 +74,17 @@ public class SerialNumberAgent {
             // 3.安装agent
             logger.info("流水号Agent结束执行...");
         }
-        catch (Exception e) {
+        catch (Exception   e) {
             // 获取异常堆栈跟踪
             String errorMessage = e.getMessage();
             // 获取异常堆栈跟踪
             String stackTrace = ExceptionUtils.getStackTrace(e);
+            System.out.println("出错啦" + stackTrace);
             logger.error("安装agent出错 - 错误信息: {}\n堆栈跟踪:\n{}", errorMessage, stackTrace);
         }
 
     }
+
 
 
 }
