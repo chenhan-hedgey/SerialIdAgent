@@ -39,7 +39,6 @@ public class SerialNumberAgent {
             path = arg==null?path:arg;
             //System.out.println("日志对象为："  + logger.getClass());
             logger.info("流水号Agent开始执行,配置路径为:{}...",path);
-            System.out.println("日志没有打印");
 
             // 1.加载配置文件，初始化配置
             if (StringUtils.isBlank(path)) {
@@ -74,7 +73,7 @@ public class SerialNumberAgent {
             // 3.安装agent
             logger.info("流水号Agent结束执行...");
         }
-        catch (Exception   e) {
+        catch ( Throwable e) {
             // 获取异常堆栈跟踪
             String errorMessage = e.getMessage();
             // 获取异常堆栈跟踪

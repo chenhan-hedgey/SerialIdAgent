@@ -79,9 +79,12 @@ public class SerialInterceptor {
             // 其他处理，如果收到异常回复，那么就修改状态为异常，如果收到其他回复，则进行校验判断是否成功并且修改状态
             processAfterIntercept();
             return result;
-        }catch (AgentException | RuntimeException e){
+        }catch (Throwable e){
             //如果出现了 agent Exception，立即执行原方法
-            logger.info("agent执行出错，错误信息为：{}",e.toString());
+            if (!(e instanceof AgentException)) {
+                logger.error("发生了一个未知错误或者运行时错误");
+            }
+            logger.error("agent执行出错，错误信息为：{}",e.toString());
             logger.info("立即执行原方法，完成原方法的调用");
             isInsteadSuccess = false;
             result = zuper.call();
