@@ -2,6 +2,7 @@ package org.chenhan.serialAgent.domain.support;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
+import ch.qos.logback.classic.util.ContextInitializer;
 import org.chenhan.serialAgent.exception.AgentException;
 import org.slf4j.LoggerFactory;
 
@@ -19,13 +20,15 @@ public class LogbackConfig {
     public static void configureLogback(String configFile) throws AgentException {
         LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
         lc.reset(); // 清除先前的配置
-
+        //ContextInitializer ci = new ContextInitializer(lc);
+        //ci.setAutoScan(false);
+        //ci.setVariable("log_dir", logDir);
         JoranConfigurator configurator = new JoranConfigurator();
         configurator.setContext(lc);
-
         try {
             // 加载新的配置文件
             configurator.doConfigure(configFile);
+            //configurator.getInterpretationContext().addSubstitutionProperty("SERIAL_LOG_HOME","C:\\Users\\Administrator\\Desktop\\test_log");
         } catch (Exception e) {
             throw new AgentException("日志配置出错",e);
         }

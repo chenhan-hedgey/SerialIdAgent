@@ -35,9 +35,13 @@ public class SerialNumberAgent {
      */
     public static void premain(String arg, Instrumentation instrumentation)  {
         try {
-            String path = "C:\\Users\\Administrator\\Desktop\\readCode\\SerialNumberAgent\\src\\main\\resources\\serial.chenhan.agent\\sample-configs.properties";
+            String userDir = System.getProperty("user.dir");
+            String path = userDir + "/src/main/resources/serial.chenhan.agent/sample-configs.properties";
+            //String path = userDir + "\\src\\main\\resources\\serial.chenhan.agent\\sample-configs.properties";
             path = arg==null?path:arg;
-            //System.out.println("日志对象为："  + logger.getClass());
+            if (arg == null) {
+                logger.info("传入的配置文件路径为空，使用默认的配置路径：{}",path);
+            }
             logger.info("流水号Agent开始执行,配置路径为:{}...",path);
 
             // 1.加载配置文件，初始化配置
@@ -47,9 +51,11 @@ public class SerialNumberAgent {
             }
             SysConfig sysConfig = SysConfig.getSingleton();
             sysConfig.loadConfig(path,false);
-
+            String logDir = sysConfig.getInitialConfigs().get("agent.logDir");
+            logger.info("日志存放的路径:{}",logDir);
+            System.setProperty("SERIAL_LOG_HOME",logDir);
             LogbackConfig.configureLogback(sysConfig.getInitialConfigs().get("agent.logConfigPath"));
-
+            logger.info("测试2");
             ParseElementMatcherGenerator parseElementMatcherGenerator = new ParseElementMatcherGenerator();
             MethodTransformerGenerator methodTransformerGenerator = new MethodTransformerGenerator(parseElementMatcherGenerator);
 
@@ -78,7 +84,6 @@ public class SerialNumberAgent {
             String errorMessage = e.getMessage();
             // 获取异常堆栈跟踪
             String stackTrace = ExceptionUtils.getStackTrace(e);
-            System.out.println("出错啦" + stackTrace);
             logger.error("安装agent出错 - 错误信息: {}\n堆栈跟踪:\n{}", errorMessage, stackTrace);
         }
 

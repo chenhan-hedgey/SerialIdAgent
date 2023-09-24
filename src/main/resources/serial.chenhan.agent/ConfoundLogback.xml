@@ -6,7 +6,9 @@
     <!--如果使用了shade进行盖包，就请将以下的内容注释掉缓存没有内容的-->
     <property name="SHADE_PREFIX" value="package.prefix" />
     <!--<property name="SHADE_PREFIX" value="" />-->
-
+    <property name="APP_NAME" value="serial-agent" />
+    <!--<property name="LOG_DIR" value="C:/Users/Administrator/Desktop/log" />-->
+    <property name="LOG_DIR" value="${SERIAL_LOG_HOME}" />
     <!-- 定义控制台输出 -->
     <appender name="CONSOLE" class="package.prefix.ch.qos.logback.core.ConsoleAppender">
         <layout class="package.prefix.ch.qos.logback.classic.PatternLayout">
@@ -14,9 +16,6 @@
             <charset>UTF-8</charset>
         </layout>
     </appender>
-
-    <property name="APP_NAME" value="serial-agent" />
-    <property name="LOG_DIR" value="C:/Users/Administrator/Desktop/log" />
 
     <appender name="FILE" class="package.prefix.ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_DIR}/${APP_NAME}.log</file> <!-- 使用正斜杠 "/" -->
