@@ -136,6 +136,7 @@ public class SerialInterceptor {
         try {
             klass = ReflectionCache.loadClass(classAndFiledFormString[0]);
         } catch (ClassNotFoundException e) {
+            logger.info("加载数据类:{}失败",classAndFiledFormString[0]);
             throw new AgentException("加载数据类失败");
         }
         Field field = ReflectionCache.loadField(klass,classAndFiledFormString[1]);
