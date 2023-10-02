@@ -28,7 +28,6 @@ public class LogbackConfig {
         try {
             // 加载新的配置文件
             configurator.doConfigure(configFile);
-            //configurator.getInterpretationContext().addSubstitutionProperty("SERIAL_LOG_HOME","C:\\Users\\Administrator\\Desktop\\test_log");
         } catch (Exception e) {
             throw new AgentException("日志配置出错",e);
         }
